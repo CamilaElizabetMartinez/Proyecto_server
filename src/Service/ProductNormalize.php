@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Entity\ImageProduct;
 use App\Entity\Product;
 use Symfony\Component\HttpFoundation\UrlHelper;
 
