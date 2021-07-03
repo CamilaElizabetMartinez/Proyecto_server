@@ -99,6 +99,6 @@ class __TwigTemplate_67ee3d6f4b2d2e065f7acd2b0162ba0eec88e96ad917cfc6355e2e60822
 .container.body_default {
     border-top: 8px solid #aaaaaa;
 }
-", "@email/zurb_2/notification/local.css", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
+", "@email/zurb_2/notification/local.css", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/local.css");
     }
 }

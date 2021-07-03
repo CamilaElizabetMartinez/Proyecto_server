@@ -81,6 +81,6 @@ class __TwigTemplate_707a13c2510474ef72ed4799a813fb0ec47fa46283030a84eb5341f6aad
     public function getSourceContext()
     {
         return new Source("{% block panel '' %}
-", "@WebProfiler/Profiler/ajax_layout.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
+", "@WebProfiler/Profiler/ajax_layout.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
     }
 }

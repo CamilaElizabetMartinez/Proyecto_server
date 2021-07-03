@@ -63,6 +63,6 @@ class __TwigTemplate_f2d7441316acbb5a615984a392c5f492dd4f3faf94e36407eba1876a198
     public function getSourceContext()
     {
         return new Source("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path fill=\"#AAA\" d=\"M19.2 20.8c.4.7.1 1.6-.6 2l-.7.2c-.5 0-1-.3-1.3-.8l-3.7-6.7-1 .1-.9-.1-3.7 6.7c-.4.5-.9.8-1.5.8l-.7-.2c-.7-.4-1-1.3-.6-2l3.8-6.9c-.5-.7-.9-1.6-.9-2.6.1-2.4 2-4.3 4.4-4.3s4.3 1.9 4.3 4.3c0 .9-.3 1.8-.8 2.5l3.9 7zM5.2 11c.6 0 1-.3 1-.8 0-2.1 1.6-3.8 3.7-4.1.5-.1.9-.6.8-1.2-.1-.5-.6-.9-1.1-.9-3.1.5-5.3 3-5.3 6.1-.1.6.4.9.9.9zm8.4-5c2.1.3 3.7 2.1 3.8 4.2 0 .5.5.8 1 .8.6 0 1-.3 1-.8 0-3.1-2.4-5.6-5.5-6.1-.5-.1-1.1.3-1.1.8-.2.6.2 1 .8 1.1zM9 3c.5-.1.9-.6.8-1.1-.1-.6-.6-.9-1.1-.8a9 9 0 0 0-7.4 8.7c0 .6.4 1.2 1 1.2.5 0 1-.6 1-1.2C3.3 6.5 5.7 3.5 9 3zm5.7-2c-.5-.1-1.1.3-1.1.9s.3 1.1.8 1.1c3.3.5 5.8 3.4 5.8 6.8 0 .5.5 1.2 1 1.2.6 0 1-.7 1-1.2A9 9 0 0 0 14.7 1z\"/></svg>
-", "@WebProfiler/Icon/event.svg", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Icon/event.svg");
+", "@WebProfiler/Icon/event.svg", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Icon/event.svg");
     }
 }

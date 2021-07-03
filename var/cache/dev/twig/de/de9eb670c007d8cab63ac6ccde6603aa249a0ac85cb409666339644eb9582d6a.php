@@ -125,9 +125,9 @@ class __TwigTemplate_6106807758b682d98f002aa25fe3126d923b85152cd8aaa91a0611f91d0
         // line 10
         if ((isset($context["action_url"]) || array_key_exists("action_url", $context) ? $context["action_url"] : (function () { throw new RuntimeError('Variable "action_url" does not exist.', 10, $this->source); })())) {
             // line 11
-            echo (isset($context["action_url"]) || array_key_exists("action_url", $context) ? $context["action_url"] : (function () { throw new RuntimeError('Variable "action_url" does not exist.', 11, $this->source); })());
-            echo ": ";
             echo (isset($context["action_text"]) || array_key_exists("action_text", $context) ? $context["action_text"] : (function () { throw new RuntimeError('Variable "action_text" does not exist.', 11, $this->source); })());
+            echo ": ";
+            echo (isset($context["action_url"]) || array_key_exists("action_url", $context) ? $context["action_url"] : (function () { throw new RuntimeError('Variable "action_url" does not exist.', 11, $this->source); })());
             echo "
 ";
         }
@@ -189,7 +189,7 @@ class __TwigTemplate_6106807758b682d98f002aa25fe3126d923b85152cd8aaa91a0611f91d0
 
 {% block action %}
 {% if action_url %}
-{{ action_url }}: {{ action_text }}
+{{ action_text }}: {{ action_url }}
 {% endif %}
 {% endblock %}
 
@@ -199,6 +199,6 @@ Exception stack trace attached.
 {{ exception }}
 {% endif %}
 {% endblock %}
-", "@email/zurb_2/notification/body.txt.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/body.txt.twig");
+", "@email/zurb_2/notification/body.txt.twig", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/notification/body.txt.twig");
     }
 }

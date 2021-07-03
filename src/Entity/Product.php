@@ -23,7 +23,7 @@ class Product
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class)
+     * @ORM\ManyToOne(targetEntity=Category::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
@@ -49,7 +49,7 @@ class Product
     private $price;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class)
+     * @ORM\ManyToOne(targetEntity=User::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;

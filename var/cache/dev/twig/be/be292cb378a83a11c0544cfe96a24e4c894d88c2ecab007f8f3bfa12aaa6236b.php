@@ -439,6 +439,6 @@ class __TwigTemplate_60dffbe3523e4d763cecb7cab36510304dd4cb537c201d25585f487d637
     {%- set widget_class = widget_class|default('mr-2') -%}
     {{- parent() -}}
 {%- endblock radio_widget -%}
-", "tailwind_2_layout.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
+", "tailwind_2_layout.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
     }
 }

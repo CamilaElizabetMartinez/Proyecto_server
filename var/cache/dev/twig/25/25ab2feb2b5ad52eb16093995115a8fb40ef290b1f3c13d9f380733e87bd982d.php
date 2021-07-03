@@ -1110,6 +1110,6 @@ class __TwigTemplate_be35b552519d20eedc4ce514176a466c8c6541bbb7f42e46b93643c1627
         </span>
     {%- endif -%}
 {%- endblock form_help %}
-", "bootstrap_3_layout.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_3_layout.html.twig");
+", "bootstrap_3_layout.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_3_layout.html.twig");
     }
 }

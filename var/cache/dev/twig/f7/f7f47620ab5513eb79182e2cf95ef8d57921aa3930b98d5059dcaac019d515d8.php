@@ -277,6 +277,6 @@ class __TwigTemplate_34bac6713f1f6664e77c438226812dff862ab6dc6292feb12f1c94f227b
     {% set attr = attr|merge({class: (attr.class|default('') ~ ' button')|trim}) %}
     {{- parent() -}}
 {%- endblock button_widget %}
-", "foundation_6_layout.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Form/foundation_6_layout.html.twig");
+", "foundation_6_layout.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Form/foundation_6_layout.html.twig");
     }
 }

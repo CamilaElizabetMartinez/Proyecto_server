@@ -193,6 +193,6 @@ class __TwigTemplate_e9d78eef6734c058dba58f9872c3c08a9e23fdd2e2727f76db6f262fa7a
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
     }
 }

@@ -97,152 +97,158 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
             $context["color_code"] = (((isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 8, $this->source); })())) ? ("") : ("yellow"));
             // line 9
             echo "    ";
-        } else {
+        } elseif (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 9, $this->source); })()), "enabled", [], "any", false, false, false, 9)) {
             // line 10
             echo "        ";
-            $context["color_code"] = ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 10, $this->source); })()), "enabled", [], "any", false, false, false, 10)) ? ("red") : (""));
+            $context["color_code"] = ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 10, $this->source); })()), "authenticatorManagerEnabled", [], "any", false, false, false, 10)) ? ("yellow") : ("red"));
             // line 11
             echo "    ";
+        } else {
+            // line 12
+            echo "        ";
+            $context["color_code"] = "";
+            // line 13
+            echo "    ";
         }
-        // line 12
+        // line 14
         echo "
     ";
-        // line 13
+        // line 15
         ob_start();
-        // line 14
+        // line 16
         echo "        ";
         echo twig_include($this->env, $context, "@Security/Collector/icon.svg");
         echo "
         <span class=\"sf-toolbar-value\">";
-        // line 15
-        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "user", [], "any", true, true, false, 15)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "user", [], "any", false, false, false, 15), "n/a")) : ("n/a")), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "user", [], "any", true, true, false, 17)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "user", [], "any", false, false, false, 17), "n/a")) : ("n/a")), "html", null, true);
         echo "</span>
     ";
         $context["icon"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
-        // line 17
+        // line 19
         echo "
     ";
-        // line 18
+        // line 20
         ob_start();
-        // line 19
+        // line 21
         echo "        ";
-        if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 19, $this->source); })()), "impersonated", [], "any", false, false, false, 19)) {
-            // line 20
+        if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 21, $this->source); })()), "impersonated", [], "any", false, false, false, 21)) {
+            // line 22
             echo "            <div class=\"sf-toolbar-info-group\">
                 <div class=\"sf-toolbar-info-piece\">
                     <b>Impersonator</b>
                     <span>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 23, $this->source); })()), "impersonatorUser", [], "any", false, false, false, 23), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 25, $this->source); })()), "impersonatorUser", [], "any", false, false, false, 25), "html", null, true);
             echo "</span>
                 </div>
             </div>
         ";
         }
-        // line 27
+        // line 29
         echo "
         <div class=\"sf-toolbar-info-group\">
             ";
-        // line 29
-        if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 29, $this->source); })()), "enabled", [], "any", false, false, false, 29)) {
-            // line 30
+        // line 31
+        if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 31, $this->source); })()), "enabled", [], "any", false, false, false, 31)) {
+            // line 32
             echo "                ";
-            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 30, $this->source); })()), "token", [], "any", false, false, false, 30)) {
-                // line 31
+            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 32, $this->source); })()), "token", [], "any", false, false, false, 32)) {
+                // line 33
                 echo "                    <div class=\"sf-toolbar-info-piece\">
                         <b>Logged in as</b>
                         <span>";
-                // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33), "html", null, true);
+                // line 35
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 35, $this->source); })()), "user", [], "any", false, false, false, 35), "html", null, true);
                 echo "</span>
                     </div>
 
                     <div class=\"sf-toolbar-info-piece\">
                         <b>Authenticated</b>
                         <span class=\"sf-toolbar-status sf-toolbar-status-";
-                // line 38
-                echo (((isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 38, $this->source); })())) ? ("green") : ("red"));
+                // line 40
+                echo (((isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 40, $this->source); })())) ? ("green") : ("yellow"));
                 echo "\">";
-                echo (((isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 38, $this->source); })())) ? ("Yes") : ("No"));
+                echo (((isset($context["is_authenticated"]) || array_key_exists("is_authenticated", $context) ? $context["is_authenticated"] : (function () { throw new RuntimeError('Variable "is_authenticated" does not exist.', 40, $this->source); })())) ? ("Yes") : ("No"));
                 echo "</span>
                     </div>
 
                     <div class=\"sf-toolbar-info-piece\">
                         <b>Token class</b>
                         <span>";
-                // line 43
-                echo $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->abbrClass(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 43, $this->source); })()), "tokenClass", [], "any", false, false, false, 43));
+                // line 45
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->abbrClass(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 45, $this->source); })()), "tokenClass", [], "any", false, false, false, 45));
                 echo "</span>
                     </div>
                 ";
             } else {
-                // line 46
+                // line 48
                 echo "                    <div class=\"sf-toolbar-info-piece\">
                         <b>Authenticated</b>
-                        <span class=\"sf-toolbar-status sf-toolbar-status-red\">No</span>
+                        <span class=\"sf-toolbar-status sf-toolbar-status-yellow\">No</span>
                     </div>
                 ";
             }
-            // line 51
+            // line 53
             echo "
                 ";
-            // line 52
-            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 52, $this->source); })()), "firewall", [], "any", false, false, false, 52)) {
-                // line 53
+            // line 54
+            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 54, $this->source); })()), "firewall", [], "any", false, false, false, 54)) {
+                // line 55
                 echo "                    <div class=\"sf-toolbar-info-piece\">
                         <b>Firewall name</b>
                         <span>";
-                // line 55
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 55, $this->source); })()), "firewall", [], "any", false, false, false, 55), "name", [], "any", false, false, false, 55), "html", null, true);
+                // line 57
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 57, $this->source); })()), "firewall", [], "any", false, false, false, 57), "name", [], "any", false, false, false, 57), "html", null, true);
                 echo "</span>
                     </div>
                 ";
             }
-            // line 58
+            // line 60
             echo "
                 ";
-            // line 59
-            if ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 59, $this->source); })()), "token", [], "any", false, false, false, 59) && twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 59, $this->source); })()), "logoutUrl", [], "any", false, false, false, 59))) {
-                // line 60
+            // line 61
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 61, $this->source); })()), "token", [], "any", false, false, false, 61) && twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 61, $this->source); })()), "logoutUrl", [], "any", false, false, false, 61))) {
+                // line 62
                 echo "                    <div class=\"sf-toolbar-info-piece\">
                         <b>Actions</b>
                         <span>
                             <a href=\"";
-                // line 63
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 63, $this->source); })()), "logoutUrl", [], "any", false, false, false, 63), "html", null, true);
+                // line 65
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 65, $this->source); })()), "logoutUrl", [], "any", false, false, false, 65), "html", null, true);
                 echo "\">Logout</a>
                             ";
-                // line 64
-                if ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 64, $this->source); })()), "impersonated", [], "any", false, false, false, 64) && twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 64, $this->source); })()), "impersonationExitPath", [], "any", false, false, false, 64))) {
-                    // line 65
+                // line 66
+                if ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 66, $this->source); })()), "impersonated", [], "any", false, false, false, 66) && twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 66, $this->source); })()), "impersonationExitPath", [], "any", false, false, false, 66))) {
+                    // line 67
                     echo "                                | <a href=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 65, $this->source); })()), "impersonationExitPath", [], "any", false, false, false, 65), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 67, $this->source); })()), "impersonationExitPath", [], "any", false, false, false, 67), "html", null, true);
                     echo "\">Exit impersonation</a>
                             ";
                 }
-                // line 67
+                // line 69
                 echo "                        </span>
                     </div>
                 ";
             }
-            // line 70
+            // line 72
             echo "            ";
         } else {
-            // line 71
+            // line 73
             echo "                <div class=\"sf-toolbar-info-piece\">
                     <span>The security is disabled.</span>
                 </div>
             ";
         }
-        // line 75
+        // line 77
         echo "        </div>
     ";
         $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
-        // line 77
+        // line 79
         echo "
     ";
-        // line 78
-        echo twig_include($this->env, $context, "@WebProfiler/Profiler/toolbar_item.html.twig", ["link" => (isset($context["profiler_url"]) || array_key_exists("profiler_url", $context) ? $context["profiler_url"] : (function () { throw new RuntimeError('Variable "profiler_url" does not exist.', 78, $this->source); })()), "status" => (isset($context["color_code"]) || array_key_exists("color_code", $context) ? $context["color_code"] : (function () { throw new RuntimeError('Variable "color_code" does not exist.', 78, $this->source); })())]);
+        // line 80
+        echo twig_include($this->env, $context, "@WebProfiler/Profiler/toolbar_item.html.twig", ["link" => (isset($context["profiler_url"]) || array_key_exists("profiler_url", $context) ? $context["profiler_url"] : (function () { throw new RuntimeError('Variable "profiler_url" does not exist.', 80, $this->source); })()), "status" => (isset($context["color_code"]) || array_key_exists("color_code", $context) ? $context["color_code"] : (function () { throw new RuntimeError('Variable "color_code" does not exist.', 80, $this->source); })())]);
         echo "
 ";
         
@@ -253,7 +259,7 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
 
     }
 
-    // line 81
+    // line 83
     public function block_menu($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -263,12 +269,12 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "menu"));
 
-        // line 82
+        // line 84
         echo "    <span class=\"label ";
-        echo ((( !twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 82, $this->source); })()), "enabled", [], "any", false, false, false, 82) ||  !twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 82, $this->source); })()), "token", [], "any", false, false, false, 82))) ? ("disabled") : (""));
+        echo ((( !twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 84, $this->source); })()), "enabled", [], "any", false, false, false, 84) ||  !twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 84, $this->source); })()), "token", [], "any", false, false, false, 84))) ? ("disabled") : (""));
         echo "\">
         <span class=\"icon\">";
-        // line 83
+        // line 85
         echo twig_include($this->env, $context, "@Security/Collector/icon.svg");
         echo "</span>
         <strong>Security</strong>
@@ -282,7 +288,7 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
 
     }
 
-    // line 88
+    // line 90
     public function block_panel($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -292,29 +298,29 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "panel"));
 
-        // line 89
+        // line 91
         echo "    <h2>Security Token</h2>
 
     ";
-        // line 91
-        if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 91, $this->source); })()), "enabled", [], "any", false, false, false, 91)) {
-            // line 92
+        // line 93
+        if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 93, $this->source); })()), "enabled", [], "any", false, false, false, 93)) {
+            // line 94
             echo "        ";
-            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 92, $this->source); })()), "token", [], "any", false, false, false, 92)) {
-                // line 93
+            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 94, $this->source); })()), "token", [], "any", false, false, false, 94)) {
+                // line 95
                 echo "            <div class=\"metrics\">
                 <div class=\"metric\">
                     <span class=\"value\">";
-                // line 95
-                (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 95, $this->source); })()), "user", [], "any", false, false, false, 95), "anon."))) ? (print ("Anonymous")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 95, $this->source); })()), "user", [], "any", false, false, false, 95), "html", null, true))));
+                // line 97
+                (((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 97, $this->source); })()), "user", [], "any", false, false, false, 97), "anon."))) ? (print ("Anonymous")) : (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 97, $this->source); })()), "user", [], "any", false, false, false, 97), "html", null, true))));
                 echo "</span>
                     <span class=\"label\">Username</span>
                 </div>
 
                 <div class=\"metric\">
                     <span class=\"value\">";
-                // line 100
-                echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 100, $this->source); })()), "authenticated", [], "any", false, false, false, 100)) ? ("yes") : ("no"))) . ".svg"));
+                // line 102
+                echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 102, $this->source); })()), "authenticated", [], "any", false, false, false, 102)) ? ("yes") : ("no"))) . ".svg"));
                 echo "</span>
                     <span class=\"label\">Authenticated</span>
                 </div>
@@ -332,112 +338,112 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                         <th>Roles</th>
                         <td>
                             ";
-                // line 116
-                echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 116, $this->source); })()), "roles", [], "any", false, false, false, 116))) ? ("none") : ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 116, $this->source); })()), "roles", [], "any", false, false, false, 116), 1)));
+                // line 118
+                echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 118, $this->source); })()), "roles", [], "any", false, false, false, 118))) ? ("none") : ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 118, $this->source); })()), "roles", [], "any", false, false, false, 118), 1)));
                 echo "
 
                             ";
-                // line 118
-                if (( !twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 118, $this->source); })()), "authenticated", [], "any", false, false, false, 118) && twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 118, $this->source); })()), "roles", [], "any", false, false, false, 118)))) {
-                    // line 119
+                // line 120
+                if (( !twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 120, $this->source); })()), "authenticated", [], "any", false, false, false, 120) && twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 120, $this->source); })()), "roles", [], "any", false, false, false, 120)))) {
+                    // line 121
                     echo "                                <p class=\"help\">User is not authenticated probably because they have no roles.</p>
                             ";
                 }
-                // line 121
+                // line 123
                 echo "                        </td>
                     </tr>
 
                     ";
-                // line 124
-                if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 124, $this->source); })()), "supportsRoleHierarchy", [], "any", false, false, false, 124)) {
-                    // line 125
+                // line 126
+                if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 126, $this->source); })()), "supportsRoleHierarchy", [], "any", false, false, false, 126)) {
+                    // line 127
                     echo "                    <tr>
                         <th>Inherited Roles</th>
                         <td>";
-                    // line 127
-                    echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 127, $this->source); })()), "inheritedRoles", [], "any", false, false, false, 127))) ? ("none") : ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 127, $this->source); })()), "inheritedRoles", [], "any", false, false, false, 127), 1)));
+                    // line 129
+                    echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 129, $this->source); })()), "inheritedRoles", [], "any", false, false, false, 129))) ? ("none") : ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 129, $this->source); })()), "inheritedRoles", [], "any", false, false, false, 129), 1)));
                     echo "</td>
                     </tr>
                     ";
                 }
-                // line 130
+                // line 132
                 echo "
                     ";
-                // line 131
-                if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 131, $this->source); })()), "token", [], "any", false, false, false, 131)) {
-                    // line 132
+                // line 133
+                if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 133, $this->source); })()), "token", [], "any", false, false, false, 133)) {
+                    // line 134
                     echo "                    <tr>
                         <th>Token</th>
                         <td>";
-                    // line 134
-                    echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 134, $this->source); })()), "token", [], "any", false, false, false, 134));
+                    // line 136
+                    echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 136, $this->source); })()), "token", [], "any", false, false, false, 136));
                     echo "</td>
                     </tr>
                     ";
                 }
-                // line 137
+                // line 139
                 echo "                </tbody>
             </table>
         ";
-            } elseif (twig_get_attribute($this->env, $this->source,             // line 139
-(isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 139, $this->source); })()), "enabled", [], "any", false, false, false, 139)) {
-                // line 140
+            } elseif (twig_get_attribute($this->env, $this->source,             // line 141
+(isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 141, $this->source); })()), "enabled", [], "any", false, false, false, 141)) {
+                // line 142
                 echo "            <div class=\"empty\">
                 <p>There is no security token.</p>
             </div>
         ";
             }
-            // line 144
+            // line 146
             echo "
 
         <h2>Security Firewall</h2>
 
         ";
-            // line 148
-            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 148, $this->source); })()), "firewall", [], "any", false, false, false, 148)) {
-                // line 149
+            // line 150
+            if (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 150, $this->source); })()), "firewall", [], "any", false, false, false, 150)) {
+                // line 151
                 echo "            <div class=\"metrics\">
                 <div class=\"metric\">
                     <span class=\"value\">";
-                // line 151
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 151, $this->source); })()), "firewall", [], "any", false, false, false, 151), "name", [], "any", false, false, false, 151), "html", null, true);
+                // line 153
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 153, $this->source); })()), "firewall", [], "any", false, false, false, 153), "name", [], "any", false, false, false, 153), "html", null, true);
                 echo "</span>
                     <span class=\"label\">Name</span>
                 </div>
                 <div class=\"metric\">
                     <span class=\"value\">";
-                // line 155
-                echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 155, $this->source); })()), "firewall", [], "any", false, false, false, 155), "security_enabled", [], "any", false, false, false, 155)) ? ("yes") : ("no"))) . ".svg"));
+                // line 157
+                echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 157, $this->source); })()), "firewall", [], "any", false, false, false, 157), "security_enabled", [], "any", false, false, false, 157)) ? ("yes") : ("no"))) . ".svg"));
                 echo "</span>
                     <span class=\"label\">Security enabled</span>
                 </div>
                 <div class=\"metric\">
                     <span class=\"value\">";
-                // line 159
-                echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 159, $this->source); })()), "firewall", [], "any", false, false, false, 159), "stateless", [], "any", false, false, false, 159)) ? ("yes") : ("no"))) . ".svg"));
+                // line 161
+                echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 161, $this->source); })()), "firewall", [], "any", false, false, false, 161), "stateless", [], "any", false, false, false, 161)) ? ("yes") : ("no"))) . ".svg"));
                 echo "</span>
                     <span class=\"label\">Stateless</span>
                 </div>
                 ";
-                // line 162
-                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 162, $this->source); })()), "authenticatorManagerEnabled", [], "any", false, false, false, 162), false))) {
-                    // line 163
+                // line 164
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 164, $this->source); })()), "authenticatorManagerEnabled", [], "any", false, false, false, 164), false))) {
+                    // line 165
                     echo "                <div class=\"metric\">
                     <span class=\"value\">";
-                    // line 164
-                    echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 164, $this->source); })()), "firewall", [], "any", false, false, false, 164), "allows_anonymous", [], "any", false, false, false, 164)) ? ("yes") : ("no"))) . ".svg"));
+                    // line 166
+                    echo twig_include($this->env, $context, (("@WebProfiler/Icon/" . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 166, $this->source); })()), "firewall", [], "any", false, false, false, 166), "allows_anonymous", [], "any", false, false, false, 166)) ? ("yes") : ("no"))) . ".svg"));
                     echo "</span>
                     <span class=\"label\">Allows anonymous</span>
                 </div>
                 ";
                 }
-                // line 168
+                // line 170
                 echo "            </div>
 
             ";
-                // line 170
-                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 170, $this->source); })()), "firewall", [], "any", false, false, false, 170), "security_enabled", [], "any", false, false, false, 170)) {
-                    // line 171
+                // line 172
+                if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 172, $this->source); })()), "firewall", [], "any", false, false, false, 172), "security_enabled", [], "any", false, false, false, 172)) {
+                    // line 173
                     echo "                <h4>Configuration</h4>
 
                 <table>
@@ -451,50 +457,50 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                         <tr>
                             <th>provider</th>
                             <td>";
-                    // line 183
-                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 183, $this->source); })()), "firewall", [], "any", false, false, false, 183), "provider", [], "any", false, false, false, 183)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 183, $this->source); })()), "firewall", [], "any", false, false, false, 183), "provider", [], "any", false, false, false, 183), "html", null, true))) : (print ("(none)")));
+                    // line 185
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 185, $this->source); })()), "firewall", [], "any", false, false, false, 185), "provider", [], "any", false, false, false, 185)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 185, $this->source); })()), "firewall", [], "any", false, false, false, 185), "provider", [], "any", false, false, false, 185), "html", null, true))) : (print ("(none)")));
                     echo "</td>
                         </tr>
                         <tr>
                             <th>context</th>
                             <td>";
-                    // line 187
-                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 187, $this->source); })()), "firewall", [], "any", false, false, false, 187), "context", [], "any", false, false, false, 187)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 187, $this->source); })()), "firewall", [], "any", false, false, false, 187), "context", [], "any", false, false, false, 187), "html", null, true))) : (print ("(none)")));
+                    // line 189
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 189, $this->source); })()), "firewall", [], "any", false, false, false, 189), "context", [], "any", false, false, false, 189)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 189, $this->source); })()), "firewall", [], "any", false, false, false, 189), "context", [], "any", false, false, false, 189), "html", null, true))) : (print ("(none)")));
                     echo "</td>
                         </tr>
                         <tr>
                             <th>entry_point</th>
                             <td>";
-                    // line 191
-                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 191, $this->source); })()), "firewall", [], "any", false, false, false, 191), "entry_point", [], "any", false, false, false, 191)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 191, $this->source); })()), "firewall", [], "any", false, false, false, 191), "entry_point", [], "any", false, false, false, 191), "html", null, true))) : (print ("(none)")));
+                    // line 193
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 193, $this->source); })()), "firewall", [], "any", false, false, false, 193), "entry_point", [], "any", false, false, false, 193)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 193, $this->source); })()), "firewall", [], "any", false, false, false, 193), "entry_point", [], "any", false, false, false, 193), "html", null, true))) : (print ("(none)")));
                     echo "</td>
                         </tr>
                         <tr>
                             <th>user_checker</th>
                             <td>";
-                    // line 195
-                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 195, $this->source); })()), "firewall", [], "any", false, false, false, 195), "user_checker", [], "any", false, false, false, 195)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 195, $this->source); })()), "firewall", [], "any", false, false, false, 195), "user_checker", [], "any", false, false, false, 195), "html", null, true))) : (print ("(none)")));
+                    // line 197
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 197, $this->source); })()), "firewall", [], "any", false, false, false, 197), "user_checker", [], "any", false, false, false, 197)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 197, $this->source); })()), "firewall", [], "any", false, false, false, 197), "user_checker", [], "any", false, false, false, 197), "html", null, true))) : (print ("(none)")));
                     echo "</td>
                         </tr>
                         <tr>
                             <th>access_denied_handler</th>
                             <td>";
-                    // line 199
-                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 199, $this->source); })()), "firewall", [], "any", false, false, false, 199), "access_denied_handler", [], "any", false, false, false, 199)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 199, $this->source); })()), "firewall", [], "any", false, false, false, 199), "access_denied_handler", [], "any", false, false, false, 199), "html", null, true))) : (print ("(none)")));
+                    // line 201
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 201, $this->source); })()), "firewall", [], "any", false, false, false, 201), "access_denied_handler", [], "any", false, false, false, 201)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 201, $this->source); })()), "firewall", [], "any", false, false, false, 201), "access_denied_handler", [], "any", false, false, false, 201), "html", null, true))) : (print ("(none)")));
                     echo "</td>
                         </tr>
                         <tr>
                             <th>access_denied_url</th>
                             <td>";
-                    // line 203
-                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 203, $this->source); })()), "firewall", [], "any", false, false, false, 203), "access_denied_url", [], "any", false, false, false, 203)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 203, $this->source); })()), "firewall", [], "any", false, false, false, 203), "access_denied_url", [], "any", false, false, false, 203), "html", null, true))) : (print ("(none)")));
+                    // line 205
+                    ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 205, $this->source); })()), "firewall", [], "any", false, false, false, 205), "access_denied_url", [], "any", false, false, false, 205)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 205, $this->source); })()), "firewall", [], "any", false, false, false, 205), "access_denied_url", [], "any", false, false, false, 205), "html", null, true))) : (print ("(none)")));
                     echo "</td>
                         </tr>
                         <tr>
                             <th>listeners</th>
                             <td>";
-                    // line 207
-                    echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 207, $this->source); })()), "firewall", [], "any", false, false, false, 207), "listeners", [], "any", false, false, false, 207))) ? ("(none)") : ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 207, $this->source); })()), "firewall", [], "any", false, false, false, 207), "listeners", [], "any", false, false, false, 207), 1)));
+                    // line 209
+                    echo ((twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 209, $this->source); })()), "firewall", [], "any", false, false, false, 209), "listeners", [], "any", false, false, false, 209))) ? ("(none)") : ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 209, $this->source); })()), "firewall", [], "any", false, false, false, 209), "listeners", [], "any", false, false, false, 209), 1)));
                     echo "</td>
                         </tr>
                     </tbody>
@@ -503,15 +509,15 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                 <h4>Listeners</h4>
 
                 ";
-                    // line 214
-                    if (twig_test_empty(((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "listeners", [], "any", true, true, false, 214)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "listeners", [], "any", false, false, false, 214), [])) : ([])))) {
-                        // line 215
+                    // line 216
+                    if (twig_test_empty(((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "listeners", [], "any", true, true, false, 216)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "listeners", [], "any", false, false, false, 216), [])) : ([])))) {
+                        // line 217
                         echo "                    <div class=\"empty\">
                         <p>No security listeners have been recorded. Check that debugging is enabled in the kernel.</p>
                     </div>
                 ";
                     } else {
-                        // line 219
+                        // line 221
                         echo "                    <table>
                         <thead>
                         <tr>
@@ -522,12 +528,12 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                         </thead>
 
                         ";
-                        // line 228
-                        $context["previous_event"] = twig_first($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 228, $this->source); })()), "listeners", [], "any", false, false, false, 228));
-                        // line 229
+                        // line 230
+                        $context["previous_event"] = twig_first($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 230, $this->source); })()), "listeners", [], "any", false, false, false, 230));
+                        // line 231
                         echo "                        ";
                         $context['_parent'] = $context;
-                        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 229, $this->source); })()), "listeners", [], "any", false, false, false, 229));
+                        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 231, $this->source); })()), "listeners", [], "any", false, false, false, 231));
                         $context['loop'] = [
                           'parent' => $context['_parent'],
                           'index0' => 0,
@@ -542,50 +548,50 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                             $context['loop']['last'] = 1 === $length;
                         }
                         foreach ($context['_seq'] as $context["_key"] => $context["listener"]) {
-                            // line 230
+                            // line 232
                             echo "                            ";
-                            if ((twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 230) || (0 !== twig_compare($context["listener"], (isset($context["previous_event"]) || array_key_exists("previous_event", $context) ? $context["previous_event"] : (function () { throw new RuntimeError('Variable "previous_event" does not exist.', 230, $this->source); })()))))) {
-                                // line 231
+                            if ((twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 232) || (0 !== twig_compare($context["listener"], (isset($context["previous_event"]) || array_key_exists("previous_event", $context) ? $context["previous_event"] : (function () { throw new RuntimeError('Variable "previous_event" does not exist.', 232, $this->source); })()))))) {
+                                // line 233
                                 echo "                                ";
-                                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 231)) {
-                                    // line 232
+                                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 233)) {
+                                    // line 234
                                     echo "                                    </tbody>
                                 ";
                                 }
-                                // line 234
+                                // line 236
                                 echo "
                                 <tbody>
                                 ";
-                                // line 236
+                                // line 238
                                 $context["previous_event"] = $context["listener"];
-                                // line 237
+                                // line 239
                                 echo "                            ";
                             }
-                            // line 238
+                            // line 240
                             echo "
                             <tr>
                                 <td class=\"font-normal\">";
-                            // line 240
-                            echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["listener"], "stub", [], "any", false, false, false, 240));
+                            // line 242
+                            echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["listener"], "stub", [], "any", false, false, false, 242));
                             echo "</td>
                                 <td class=\"no-wrap\">";
-                            // line 241
-                            echo twig_escape_filter($this->env, sprintf("%0.2f", (twig_get_attribute($this->env, $this->source, $context["listener"], "time", [], "any", false, false, false, 241) * 1000)), "html", null, true);
+                            // line 243
+                            echo twig_escape_filter($this->env, sprintf("%0.2f", (twig_get_attribute($this->env, $this->source, $context["listener"], "time", [], "any", false, false, false, 243) * 1000)), "html", null, true);
                             echo " ms</td>
                                 <td class=\"font-normal\">";
-                            // line 242
-                            echo ((twig_get_attribute($this->env, $this->source, $context["listener"], "response", [], "any", false, false, false, 242)) ? ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["listener"], "response", [], "any", false, false, false, 242))) : ("(none)"));
+                            // line 244
+                            echo ((twig_get_attribute($this->env, $this->source, $context["listener"], "response", [], "any", false, false, false, 244)) ? ($this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["listener"], "response", [], "any", false, false, false, 244))) : ("(none)"));
                             echo "</td>
                             </tr>
 
                             ";
-                            // line 245
-                            if (twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 245)) {
-                                // line 246
+                            // line 247
+                            if (twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 247)) {
+                                // line 248
                                 echo "                                </tbody>
                             ";
                             }
-                            // line 248
+                            // line 250
                             echo "                        ";
                             ++$context['loop']['index0'];
                             ++$context['loop']['index'];
@@ -599,46 +605,46 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                         $_parent = $context['_parent'];
                         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['listener'], $context['_parent'], $context['loop']);
                         $context = array_intersect_key($context, $_parent) + $_parent;
-                        // line 249
+                        // line 251
                         echo "                    </table>
                 ";
                     }
-                    // line 251
+                    // line 253
                     echo "            ";
                 }
-                // line 252
+                // line 254
                 echo "        ";
-            } elseif (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 252, $this->source); })()), "enabled", [], "any", false, false, false, 252)) {
-                // line 253
+            } elseif (twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 254, $this->source); })()), "enabled", [], "any", false, false, false, 254)) {
+                // line 255
                 echo "            <div class=\"empty\">
                 <p>This request was not covered by any firewall.</p>
             </div>
         ";
             }
-            // line 257
+            // line 259
             echo "    ";
         } else {
-            // line 258
+            // line 260
             echo "        <div class=\"empty\">
             <p>The security component is disabled.</p>
         </div>
     ";
         }
-        // line 262
+        // line 264
         echo "
     ";
-        // line 263
-        if ( !twig_test_empty(((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voters", [], "any", true, true, false, 263)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voters", [], "any", false, false, false, 263), [])) : ([])))) {
-            // line 264
+        // line 265
+        if ( !twig_test_empty(((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voters", [], "any", true, true, false, 265)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voters", [], "any", false, false, false, 265), [])) : ([])))) {
+            // line 266
             echo "        <h2>Security Voters <small>(";
-            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 264, $this->source); })()), "voters", [], "any", false, false, false, 264)), "html", null, true);
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 266, $this->source); })()), "voters", [], "any", false, false, false, 266)), "html", null, true);
             echo ")</small></h2>
 
         <div class=\"metrics\">
             <div class=\"metric\">
                 <span class=\"value\">";
-            // line 268
-            echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voterStrategy", [], "any", true, true, false, 268)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voterStrategy", [], "any", false, false, false, 268), "unknown")) : ("unknown")), "html", null, true);
+            // line 270
+            echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voterStrategy", [], "any", true, true, false, 270)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "voterStrategy", [], "any", false, false, false, 270), "unknown")) : ("unknown")), "html", null, true);
             echo "</span>
                 <span class=\"label\">Strategy</span>
             </div>
@@ -654,9 +660,9 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
 
             <tbody>
                 ";
-            // line 282
+            // line 284
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 282, $this->source); })()), "voters", [], "any", false, false, false, 282));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 284, $this->source); })()), "voters", [], "any", false, false, false, 284));
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -671,14 +677,14 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["voter"]) {
-                // line 283
+                // line 285
                 echo "                    <tr>
                         <td class=\"font-normal text-small text-muted nowrap\">";
-                // line 284
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 284), "html", null, true);
+                // line 286
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 286), "html", null, true);
                 echo "</td>
                         <td class=\"font-normal\">";
-                // line 285
+                // line 287
                 echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, $context["voter"]);
                 echo "</td>
                     </tr>
@@ -695,17 +701,17 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['voter'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 288
+            // line 290
             echo "            </tbody>
         </table>
     ";
         }
-        // line 291
+        // line 293
         echo "
     ";
-        // line 292
-        if ( !twig_test_empty(((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "accessDecisionLog", [], "any", true, true, false, 292)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "accessDecisionLog", [], "any", false, false, false, 292), [])) : ([])))) {
-            // line 293
+        // line 294
+        if ( !twig_test_empty(((twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "accessDecisionLog", [], "any", true, true, false, 294)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, ($context["collector"] ?? null), "accessDecisionLog", [], "any", false, false, false, 294), [])) : ([])))) {
+            // line 295
             echo "        <h2>Access decision log</h2>
 
         <table class=\"decision-log\">
@@ -725,9 +731,9 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
 
             <tbody>
                 ";
-            // line 311
+            // line 313
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 311, $this->source); })()), "accessDecisionLog", [], "any", false, false, false, 311));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 313, $this->source); })()), "accessDecisionLog", [], "any", false, false, false, 313));
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -742,125 +748,125 @@ class __TwigTemplate_55c2dde5bfa7e1a6d0fc249874501172706960b88eaee427ae1711c9cfe
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["decision"]) {
-                // line 312
+                // line 314
                 echo "                    <tr class=\"voter_result\">
                         <td class=\"font-normal text-small text-muted nowrap\">";
-                // line 313
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 313), "html", null, true);
+                // line 315
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 315), "html", null, true);
                 echo "</td>
                         <td class=\"font-normal\">
                             ";
-                // line 315
-                echo ((twig_get_attribute($this->env, $this->source, $context["decision"], "result", [], "any", false, false, false, 315)) ? ("<span class=\"label status-success same-width\">GRANTED</span>") : ("<span class=\"label status-error same-width\">DENIED</span>"));
-                // line 318
+                // line 317
+                echo ((twig_get_attribute($this->env, $this->source, $context["decision"], "result", [], "any", false, false, false, 317)) ? ("<span class=\"label status-success same-width\">GRANTED</span>") : ("<span class=\"label status-error same-width\">DENIED</span>"));
+                // line 320
                 echo "
                         </td>
                         <td>
                             ";
-                // line 321
-                if ((0 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "attributes", [], "any", false, false, false, 321)), 1))) {
-                    // line 322
+                // line 323
+                if ((0 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "attributes", [], "any", false, false, false, 323)), 1))) {
+                    // line 324
                     echo "                                ";
-                    $context["attribute"] = twig_first($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "attributes", [], "any", false, false, false, 322));
-                    // line 323
+                    $context["attribute"] = twig_first($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "attributes", [], "any", false, false, false, 324));
+                    // line 325
                     echo "                                ";
-                    if (twig_get_attribute($this->env, $this->source, ($context["attribute"] ?? null), "expression", [], "any", true, true, false, 323)) {
-                        // line 324
+                    if (twig_get_attribute($this->env, $this->source, ($context["attribute"] ?? null), "expression", [], "any", true, true, false, 325)) {
+                        // line 326
                         echo "                                    Expression: <pre><code>";
-                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 324, $this->source); })()), "expression", [], "any", false, false, false, 324), "html", null, true);
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 326, $this->source); })()), "expression", [], "any", false, false, false, 326), "html", null, true);
                         echo "</code></pre>
                                 ";
-                    } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                     // line 325
-(isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 325, $this->source); })()), "type", [], "any", false, false, false, 325), "string"))) {
-                        // line 326
+                    } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                     // line 327
+(isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 327, $this->source); })()), "type", [], "any", false, false, false, 327), "string"))) {
+                        // line 328
                         echo "                                    ";
-                        echo twig_escape_filter($this->env, (isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 326, $this->source); })()), "html", null, true);
+                        echo twig_escape_filter($this->env, (isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 328, $this->source); })()), "html", null, true);
                         echo "
                                 ";
                     } else {
-                        // line 328
+                        // line 330
                         echo "                                     ";
-                        echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, (isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 328, $this->source); })()));
+                        echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, (isset($context["attribute"]) || array_key_exists("attribute", $context) ? $context["attribute"] : (function () { throw new RuntimeError('Variable "attribute" does not exist.', 330, $this->source); })()));
                         echo "
                                 ";
                     }
-                    // line 330
+                    // line 332
                     echo "                            ";
                 } else {
-                    // line 331
+                    // line 333
                     echo "                                ";
-                    echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "attributes", [], "any", false, false, false, 331));
+                    echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "attributes", [], "any", false, false, false, 333));
                     echo "
                             ";
                 }
-                // line 333
+                // line 335
                 echo "                        </td>
                         <td>";
-                // line 334
-                echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "seek", [0 => "object"], "method", false, false, false, 334));
+                // line 336
+                echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["decision"], "seek", [0 => "object"], "method", false, false, false, 336));
                 echo "</td>
                     </tr>
                     <tr class=\"voter_details\">
                         <td></td>
                         <td colspan=\"3\">
                         ";
-                // line 339
-                if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["decision"], "voter_details", [], "any", false, false, false, 339))) {
-                    // line 340
+                // line 341
+                if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["decision"], "voter_details", [], "any", false, false, false, 341))) {
+                    // line 342
                     echo "                            ";
-                    $context["voter_details_id"] = ("voter-details-" . twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 340));
-                    // line 341
+                    $context["voter_details_id"] = ("voter-details-" . twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 342));
+                    // line 343
                     echo "                            <div id=\"";
-                    echo twig_escape_filter($this->env, (isset($context["voter_details_id"]) || array_key_exists("voter_details_id", $context) ? $context["voter_details_id"] : (function () { throw new RuntimeError('Variable "voter_details_id" does not exist.', 341, $this->source); })()), "html", null, true);
+                    echo twig_escape_filter($this->env, (isset($context["voter_details_id"]) || array_key_exists("voter_details_id", $context) ? $context["voter_details_id"] : (function () { throw new RuntimeError('Variable "voter_details_id" does not exist.', 343, $this->source); })()), "html", null, true);
                     echo "\" class=\"sf-toggle-content sf-toggle-hidden\">
                                 <table>
                                    <tbody>
                                     ";
-                    // line 344
+                    // line 346
                     $context['_parent'] = $context;
-                    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["decision"], "voter_details", [], "any", false, false, false, 344));
+                    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["decision"], "voter_details", [], "any", false, false, false, 346));
                     foreach ($context['_seq'] as $context["_key"] => $context["voter_detail"]) {
-                        // line 345
+                        // line 347
                         echo "                                        <tr>
                                             <td class=\"font-normal\">";
-                        // line 346
-                        echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["voter_detail"], "class", [], "array", false, false, false, 346));
+                        // line 348
+                        echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, twig_get_attribute($this->env, $this->source, $context["voter_detail"], "class", [], "array", false, false, false, 348));
                         echo "</td>
                                             ";
-                        // line 347
-                        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 347, $this->source); })()), "voterStrategy", [], "any", false, false, false, 347), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\AccessDecisionManager::STRATEGY_UNANIMOUS")))) {
-                            // line 348
+                        // line 349
+                        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 349, $this->source); })()), "voterStrategy", [], "any", false, false, false, 349), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\AccessDecisionManager::STRATEGY_UNANIMOUS")))) {
+                            // line 350
                             echo "                                            <td class=\"font-normal text-small\">attribute ";
-                            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["voter_detail"], "attributes", [], "array", false, false, false, 348), 0, [], "array", false, false, false, 348), "html", null, true);
+                            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["voter_detail"], "attributes", [], "array", false, false, false, 350), 0, [], "array", false, false, false, 350), "html", null, true);
                             echo "</td>
                                             ";
                         }
-                        // line 350
+                        // line 352
                         echo "                                            <td class=\"font-normal text-small\">
                                                 ";
-                        // line 351
-                        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["voter_detail"], "vote", [], "array", false, false, false, 351), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_GRANTED")))) {
-                            // line 352
+                        // line 353
+                        if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["voter_detail"], "vote", [], "array", false, false, false, 353), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_GRANTED")))) {
+                            // line 354
                             echo "                                                    ACCESS GRANTED
                                                 ";
-                        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                         // line 353
-$context["voter_detail"], "vote", [], "array", false, false, false, 353), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_ABSTAIN")))) {
-                            // line 354
+                        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                         // line 355
+$context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_ABSTAIN")))) {
+                            // line 356
                             echo "                                                    ACCESS ABSTAIN
                                                 ";
-                        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                         // line 355
-$context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_DENIED")))) {
-                            // line 356
+                        } elseif ((0 === twig_compare(twig_get_attribute($this->env, $this->source,                         // line 357
+$context["voter_detail"], "vote", [], "array", false, false, false, 357), twig_constant("Symfony\\Component\\Security\\Core\\Authorization\\Voter\\VoterInterface::ACCESS_DENIED")))) {
+                            // line 358
                             echo "                                                    ACCESS DENIED
                                                 ";
                         } else {
-                            // line 358
+                            // line 360
                             echo "                                                    unknown (";
-                            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voter_detail"], "vote", [], "array", false, false, false, 358), "html", null, true);
+                            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["voter_detail"], "vote", [], "array", false, false, false, 360), "html", null, true);
                             echo ")
                                                 ";
                         }
-                        // line 360
+                        // line 362
                         echo "                                            </td>
                                         </tr>
                                     ";
@@ -868,17 +874,17 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['voter_detail'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 363
+                    // line 365
                     echo "                                    </tbody>
                                 </table>
                             </div>
                             <a class=\"btn btn-link text-small sf-toggle\" data-toggle-selector=\"#";
-                    // line 366
-                    echo twig_escape_filter($this->env, (isset($context["voter_details_id"]) || array_key_exists("voter_details_id", $context) ? $context["voter_details_id"] : (function () { throw new RuntimeError('Variable "voter_details_id" does not exist.', 366, $this->source); })()), "html", null, true);
+                    // line 368
+                    echo twig_escape_filter($this->env, (isset($context["voter_details_id"]) || array_key_exists("voter_details_id", $context) ? $context["voter_details_id"] : (function () { throw new RuntimeError('Variable "voter_details_id" does not exist.', 368, $this->source); })()), "html", null, true);
                     echo "\" data-toggle-alt-content=\"Hide voter details\">Show voter details</a>
                         ";
                 }
-                // line 368
+                // line 370
                 echo "                        </td>
                     </tr>
                 ";
@@ -894,7 +900,7 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['decision'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 371
+            // line 373
             echo "            </tbody>
         </table>
     ";
@@ -919,7 +925,7 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
 
     public function getDebugInfo()
     {
-        return array (  898 => 371,  882 => 368,  877 => 366,  872 => 363,  864 => 360,  858 => 358,  854 => 356,  852 => 355,  849 => 354,  847 => 353,  844 => 352,  842 => 351,  839 => 350,  833 => 348,  831 => 347,  827 => 346,  824 => 345,  820 => 344,  813 => 341,  810 => 340,  808 => 339,  800 => 334,  797 => 333,  791 => 331,  788 => 330,  782 => 328,  776 => 326,  774 => 325,  769 => 324,  766 => 323,  763 => 322,  761 => 321,  756 => 318,  754 => 315,  749 => 313,  746 => 312,  729 => 311,  709 => 293,  707 => 292,  704 => 291,  699 => 288,  682 => 285,  678 => 284,  675 => 283,  658 => 282,  641 => 268,  633 => 264,  631 => 263,  628 => 262,  622 => 258,  619 => 257,  613 => 253,  610 => 252,  607 => 251,  603 => 249,  589 => 248,  585 => 246,  583 => 245,  577 => 242,  573 => 241,  569 => 240,  565 => 238,  562 => 237,  560 => 236,  556 => 234,  552 => 232,  549 => 231,  546 => 230,  528 => 229,  526 => 228,  515 => 219,  509 => 215,  507 => 214,  497 => 207,  490 => 203,  483 => 199,  476 => 195,  469 => 191,  462 => 187,  455 => 183,  441 => 171,  439 => 170,  435 => 168,  428 => 164,  425 => 163,  423 => 162,  417 => 159,  410 => 155,  403 => 151,  399 => 149,  397 => 148,  391 => 144,  385 => 140,  383 => 139,  379 => 137,  373 => 134,  369 => 132,  367 => 131,  364 => 130,  358 => 127,  354 => 125,  352 => 124,  347 => 121,  343 => 119,  341 => 118,  336 => 116,  317 => 100,  309 => 95,  305 => 93,  302 => 92,  300 => 91,  296 => 89,  286 => 88,  272 => 83,  267 => 82,  257 => 81,  245 => 78,  242 => 77,  238 => 75,  232 => 71,  229 => 70,  224 => 67,  218 => 65,  216 => 64,  212 => 63,  207 => 60,  205 => 59,  202 => 58,  196 => 55,  192 => 53,  190 => 52,  187 => 51,  180 => 46,  174 => 43,  164 => 38,  156 => 33,  152 => 31,  149 => 30,  147 => 29,  143 => 27,  136 => 23,  131 => 20,  128 => 19,  126 => 18,  123 => 17,  118 => 15,  113 => 14,  111 => 13,  108 => 12,  105 => 11,  102 => 10,  99 => 9,  96 => 8,  93 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  904 => 373,  888 => 370,  883 => 368,  878 => 365,  870 => 362,  864 => 360,  860 => 358,  858 => 357,  855 => 356,  853 => 355,  850 => 354,  848 => 353,  845 => 352,  839 => 350,  837 => 349,  833 => 348,  830 => 347,  826 => 346,  819 => 343,  816 => 342,  814 => 341,  806 => 336,  803 => 335,  797 => 333,  794 => 332,  788 => 330,  782 => 328,  780 => 327,  775 => 326,  772 => 325,  769 => 324,  767 => 323,  762 => 320,  760 => 317,  755 => 315,  752 => 314,  735 => 313,  715 => 295,  713 => 294,  710 => 293,  705 => 290,  688 => 287,  684 => 286,  681 => 285,  664 => 284,  647 => 270,  639 => 266,  637 => 265,  634 => 264,  628 => 260,  625 => 259,  619 => 255,  616 => 254,  613 => 253,  609 => 251,  595 => 250,  591 => 248,  589 => 247,  583 => 244,  579 => 243,  575 => 242,  571 => 240,  568 => 239,  566 => 238,  562 => 236,  558 => 234,  555 => 233,  552 => 232,  534 => 231,  532 => 230,  521 => 221,  515 => 217,  513 => 216,  503 => 209,  496 => 205,  489 => 201,  482 => 197,  475 => 193,  468 => 189,  461 => 185,  447 => 173,  445 => 172,  441 => 170,  434 => 166,  431 => 165,  429 => 164,  423 => 161,  416 => 157,  409 => 153,  405 => 151,  403 => 150,  397 => 146,  391 => 142,  389 => 141,  385 => 139,  379 => 136,  375 => 134,  373 => 133,  370 => 132,  364 => 129,  360 => 127,  358 => 126,  353 => 123,  349 => 121,  347 => 120,  342 => 118,  323 => 102,  315 => 97,  311 => 95,  308 => 94,  306 => 93,  302 => 91,  292 => 90,  278 => 85,  273 => 84,  263 => 83,  251 => 80,  248 => 79,  244 => 77,  238 => 73,  235 => 72,  230 => 69,  224 => 67,  222 => 66,  218 => 65,  213 => 62,  211 => 61,  208 => 60,  202 => 57,  198 => 55,  196 => 54,  193 => 53,  186 => 48,  180 => 45,  170 => 40,  162 => 35,  158 => 33,  155 => 32,  153 => 31,  149 => 29,  142 => 25,  137 => 22,  134 => 21,  132 => 20,  129 => 19,  124 => 17,  119 => 16,  117 => 15,  114 => 14,  111 => 13,  108 => 12,  105 => 11,  102 => 10,  99 => 9,  96 => 8,  93 => 7,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -932,8 +938,10 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
     {% if collector.token %}
         {% set is_authenticated = collector.enabled and collector.authenticated  %}
         {% set color_code = is_authenticated ? '' : 'yellow' %}
+    {% elseif collector.enabled %}
+        {% set color_code = collector.authenticatorManagerEnabled ? 'yellow' : 'red' %}
     {% else %}
-        {% set color_code = collector.enabled ? 'red' : '' %}
+        {% set color_code = '' %}
     {% endif %}
 
     {% set icon %}
@@ -961,7 +969,7 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
 
                     <div class=\"sf-toolbar-info-piece\">
                         <b>Authenticated</b>
-                        <span class=\"sf-toolbar-status sf-toolbar-status-{{ is_authenticated ? 'green' : 'red' }}\">{{ is_authenticated ? 'Yes' : 'No' }}</span>
+                        <span class=\"sf-toolbar-status sf-toolbar-status-{{ is_authenticated ? 'green' : 'yellow' }}\">{{ is_authenticated ? 'Yes' : 'No' }}</span>
                     </div>
 
                     <div class=\"sf-toolbar-info-piece\">
@@ -971,7 +979,7 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
                 {% else %}
                     <div class=\"sf-toolbar-info-piece\">
                         <b>Authenticated</b>
-                        <span class=\"sf-toolbar-status sf-toolbar-status-red\">No</span>
+                        <span class=\"sf-toolbar-status sf-toolbar-status-yellow\">No</span>
                     </div>
                 {% endif %}
 
@@ -1298,6 +1306,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 355), twig_c
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

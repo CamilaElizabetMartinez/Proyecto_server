@@ -900,6 +900,6 @@ class __TwigTemplate_c45799ade738c101acf9442f62e301b98080bdc7dbb325738f2191ea45c
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

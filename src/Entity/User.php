@@ -66,12 +66,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $company_name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=role::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $role;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $avatar;
@@ -112,6 +106,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+     
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->getUserIdentifier();
+    }
 
     /**
      * A visual identifier that represents this user.
@@ -119,14 +121,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @see UserInterface
      */
     public function getUserIdentifier(): string
-    {
-        return (string) $this->email;
-    }
-
-    /**
-     * @deprecated since Symfony 5.3, use getUserIdentifier instead
-     */
-    public function getUsername(): string
     {
         return (string) $this->email;
     }
@@ -253,18 +247,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCompanyName(string $company_name): self
     {
         $this->company_name = $company_name;
-
-        return $this;
-    }
-
-    public function getRole(): ?role
-    {
-        return $this->role;
-    }
-
-    public function setRole(?role $role): self
-    {
-        $this->role = $role;
 
         return $this;
     }

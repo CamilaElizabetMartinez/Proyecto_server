@@ -3395,6 +3395,6 @@ body.outlook p {
         min-width: 0;
     }
 }
-", "@email/zurb_2/main.css", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/main.css");
+", "@email/zurb_2/main.css", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Email/zurb_2/main.css");
     }
 }

@@ -803,6 +803,6 @@ class __TwigTemplate_53c13cafd9b8861aff12f629195b6d913646c2412692605bcee45b20e61
         </table>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/config.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Collector/config.html.twig");
+", "@WebProfiler/Collector/config.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Collector/config.html.twig");
     }
 }

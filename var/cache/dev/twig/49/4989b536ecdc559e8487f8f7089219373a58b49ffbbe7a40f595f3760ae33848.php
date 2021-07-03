@@ -299,6 +299,6 @@ class __TwigTemplate_28c160fbca9aca7dcad57bc7eb3c59a2f4db9e684bb610035971821bb6f
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
-", "form_table_layout.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
+", "form_table_layout.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
     }
 }

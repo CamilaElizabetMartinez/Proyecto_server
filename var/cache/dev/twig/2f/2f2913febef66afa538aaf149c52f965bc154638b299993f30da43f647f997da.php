@@ -1671,6 +1671,6 @@ class __TwigTemplate_e21c9916aa9039c583c825ef844f64d05d5af7b677aa8e952c39788fd8b
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/var/www/html/Proyecto_server/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

@@ -898,6 +898,6 @@ class __TwigTemplate_c6d2da9d742e2df3f2c340d17ad9e6eeef14af625fc8d9787a78b7e1e9f
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
     }
 }

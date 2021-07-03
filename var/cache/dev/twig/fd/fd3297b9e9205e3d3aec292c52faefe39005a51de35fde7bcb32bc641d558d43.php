@@ -482,6 +482,6 @@ class __TwigTemplate_97154bdab6c6c71a69a476c3e457ac5e8b128530cb16b7801e88d067d39
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

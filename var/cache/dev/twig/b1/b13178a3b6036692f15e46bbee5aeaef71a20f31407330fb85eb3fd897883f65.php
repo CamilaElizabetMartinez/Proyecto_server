@@ -191,6 +191,6 @@ class __TwigTemplate_ccc1a362447d6bd975ef11daf7ef0a6cea075ec7489739c86d7d70c1721
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/templates/base.html.twig");
+", "base.html.twig", "/var/www/html/Proyecto_server/templates/base.html.twig");
     }
 }

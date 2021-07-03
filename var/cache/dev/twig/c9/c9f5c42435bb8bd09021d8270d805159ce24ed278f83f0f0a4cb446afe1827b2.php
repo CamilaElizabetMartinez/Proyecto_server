@@ -171,6 +171,6 @@ class __TwigTemplate_7800e6726e8bfccca6118c776777c1174b8b7eced016ead19593e8934b4
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/var/www/html/Proyecto_server/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

@@ -479,6 +479,6 @@ class __TwigTemplate_d2f5da1b6b737fb465d845374457ebb7e7895b02ac18cd68cd5d36ce8a5
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
     }
 }

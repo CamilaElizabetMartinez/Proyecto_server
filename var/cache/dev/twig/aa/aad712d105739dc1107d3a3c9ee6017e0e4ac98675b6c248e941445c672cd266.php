@@ -227,6 +227,6 @@ class __TwigTemplate_e87cd08dd9e406c6d730fff7ba87a44f8cfbcbc0aa54100bdd74341dc7d
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "/var/www/html/Proyecto_server/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
     }
 }

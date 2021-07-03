@@ -698,6 +698,6 @@ class __TwigTemplate_18c71cee60d209c91fe66abdad1f83a32c3cd6af799318581505ee21415
         <td class=\"font-normal\">{{ migration.execution_time|default('n/a') }}</td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/xur174/Proyecto_server/comemos_como_pensamos/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/var/www/html/Proyecto_server/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }
