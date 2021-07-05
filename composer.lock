@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c109047192cfb689e51a66a73a0e21f1",
+    "content-hash": "ae6a2aaee159338101387c6745d2e026",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -2109,10 +2109,6 @@
                 "annotations",
                 "controllers"
             ],
-            "support": {
-                "issues": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/issues",
-                "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.1.5"
-            },
             "time": "2021-05-31T10:40:46+00:00"
         },
         {
@@ -9260,10 +9256,6 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "support": {
-                "issues": "https://github.com/symfony/maker-bundle/issues",
-                "source": "https://github.com/symfony/maker-bundle/tree/v1.32.0"
-            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -9493,5 +9485,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "1.1.0"
 }
