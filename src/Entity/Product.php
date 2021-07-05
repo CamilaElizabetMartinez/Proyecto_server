@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -53,6 +55,16 @@ class Product
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ImageProduct::class, mappedBy="product")
+     */
+    private $image_product;
+
+    public function __construct()
+    {
+        $this->image_product = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -139,6 +151,36 @@ class Product
     public function setUser(?user $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ImageProduct[]
+     */
+    public function getimageProduct(): Collection
+    {
+        return $this->image_product;
+    }
+
+    public function addImageProduct(ImageProduct $imageProduct): self
+    {
+        if (!$this->image_product->contains($imageProduct)) {
+            $this->image_product[] = $imageProduct;
+            $imageProduct->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImageProduct(ImageProduct $imageProduct): self
+    {
+        if ($this->image_product->removeElement($imageProduct)) {
+            // set the owning side to null (unless already changed)
+            if ($imageProduct->getProduct() === $this) {
+                $imageProduct->setProduct(null);
+            }
+        }
 
         return $this;
     }

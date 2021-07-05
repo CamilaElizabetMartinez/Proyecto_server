@@ -18,31 +18,19 @@ class ImageProduct
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=product::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $product;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $img_file;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="yes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $product;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getProduct(): ?product
-    {
-        return $this->product;
-    }
-
-    public function setProduct(?product $product): self
-    {
-        $this->product = $product;
-
-        return $this;
     }
 
     public function getImgFile(): ?string
@@ -53,6 +41,18 @@ class ImageProduct
     public function setImgFile(string $img_file): self
     {
         $this->img_file = $img_file;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
 
         return $this;
     }
