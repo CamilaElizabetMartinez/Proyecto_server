@@ -51,7 +51,8 @@ class FormLoginAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-        return new RedirectResponse($this->urlGenerator->generate('product'));
+        //Aqui necesito que devuelva el token
+        return new RedirectResponse($this->urlGenerator->generate('api_product'));
         /* throw new \Exception('TODO: provide a valid redirect inside '.__FILE__); */
     }
 
