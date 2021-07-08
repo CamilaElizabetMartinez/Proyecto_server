@@ -59,21 +59,13 @@ class ApiProductController extends AbstractController
      */
     public function details(
         string $slug,
-        Product $theProductEntity,
         productRepository $productRepository,
         ProductNormalize $productNormalize
     ): Response
     {
         $theProductEntity = $productRepository->findOneBy(['slug' => $slug]);
-
         
-
         $theProductEntityNormalize = $productNormalize->ProductNormalize($theProductEntity);
-
-        
-        
-
-        
 
         return $this->json($theProductEntityNormalize);
     }
