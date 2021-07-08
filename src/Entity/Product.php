@@ -158,7 +158,7 @@ class Product
     /**
      * @return Collection|ImageProduct[]
      */
-    public function getimageProduct(): Collection
+    public function getImageProducts(): Collection
     {
         return $this->image_product;
     }
@@ -176,7 +176,7 @@ class Product
     public function removeImageProduct(ImageProduct $imageProduct): self
     {
         if ($this->image_product->removeElement($imageProduct)) {
-            // set the owning side to null (unless already changed)
+           
             if ($imageProduct->getProduct() === $this) {
                 $imageProduct->setProduct(null);
             }
