@@ -2,6 +2,7 @@
 
 namespace App\Controller\admin;
 
+use App\Entity\ImageProduct;
 use App\Entity\Product;
 use App\Repository\CategoryRepository;
 use App\Repository\UserRepository;
@@ -29,14 +30,15 @@ class ApiProductController extends AbstractController
      * )
      */
     public function index(
-        Request $request,
         ProductRepository $productRepository,
         ProductNormalize $productNormalize
     ): Response {
+
         /* USAR PARA EL CONTROLADOR PRODUCT DE ADMIN*/
+        
         $user = $this->getUser();
 
-        if ($user->$this->isGranted('ROLE_ADMIN')) {
+        if ($user->this->isGranted('ROLE_ADMIN')) {
             return $productRepository->findBy(['user' => $user]);
         } else {
             return $productRepository->findAll();
@@ -67,20 +69,16 @@ class ApiProductController extends AbstractController
         CategoryRepository $categoryRepository,
         ProductNormalize $productNormalize,
         UserRepository $userRepository,
-    
         SluggerInterface $slug
     ): Response {
-
+        
         /* falta subida de imagenes de producto */
         /* falta recuperar entidad de usuario segun quien este logueado */
         $data = $request->request;
+    
 
-        dump($data);
-        dump($request->files);
-
-        /* $theUserEntity = $this->getUser(); */
+        $theUserEntity = $this->getUser();
         $theCategoryEntity = $categoryRepository->find($data->get('category_id'));
-        $theUserEntity = $userRepository->find(4);
         $slugProduct = $slug->slug($data->get('name'));
 
         $theProductEntity = new Product();
@@ -88,25 +86,48 @@ class ApiProductController extends AbstractController
         $theProductEntity->setName($data->get('name'));
         $theProductEntity->setCategory($theCategoryEntity);
         $theProductEntity->setSlug($slugProduct);
-       /*  $theProductEntity->setImgPrincipal($data->get('img_principal')); */
         $theProductEntity->setWeight($data->get('weight'));
         $theProductEntity->setPrice($data->get('price'));
-        /* $theProductEntity->setImageProduct($data->get('image_product')); */
-        /* $theProductEntity->setUser($theUserEntity); */
+
         $theProductEntity->setUser($theUserEntity);
 
+        if ($request->files->has('image_product')) {
+            $imagesProducts = $request->files->get('image_product');
+
+            foreach ($imagesProducts as $theImageProduct) {
+                $imgOriginalFilename = pathinfo($theImageProduct->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $slugImagePrincipal = $slug->slug($imgOriginalFilename);
+                $imgNewFilename = $slugImagePrincipal.'-'.uniqid().'.'. $theImageProduct->guessExtension();
+                try {
+                    $theImageProduct->move(
+                        $request->server->get('DOCUMENT_ROOT') . DIRECTORY_SEPARATOR . 'media/img/product',
+                        $imgNewFilename
+                    );
+                } catch (FileException $e) {
+                    throw new \Exception($e->getMessage());
+                }
+
+                $theImageProductEntity = new ImageProduct();
+
+                $theImageProductEntity->setImgFile($imgNewFilename);
+
+                $theImageProductEntity->setProduct($theProductEntity);
+
+                $entityManager->persist($theImageProductEntity);
+
+            }
+        }
+
         if ($request->files->has('img_principal')) {
-            $imgPrinciplaFile= $request->files->get('img_principal');
-            
-           $imgOriginalFilename = pathinfo($imgPrinciplaFile->getClientOriginalName(), PATHINFO_FILENAME);
-            dump($imgOriginalFilename);
+            $imgPrincipalFile= $request->files->get('img_principal');
 
-           
-            $imgNewFilename = $slugProduct.'-'.uniqid().'.'.$imgPrinciplaFile->guessExtension();
-            dump($imgNewFilename);
+            $imgOriginalFilename = pathinfo($imgPrincipalFile->getClientOriginalName(), PATHINFO_FILENAME);
 
+            $slugImagePrincipal = $slug->slug($imgOriginalFilename);
+            $imgNewFilename = $slugImagePrincipal.'-'.uniqid().'.'.$imgPrincipalFile->guessExtension();
             try {
-                $imgPrinciplaFile->move(
+                $imgPrincipalFile->move(
                     $request->server->get('DOCUMENT_ROOT') . DIRECTORY_SEPARATOR . 'media/img/product',
                     $imgNewFilename
                 );
@@ -127,14 +148,16 @@ class ApiProductController extends AbstractController
                 $dataErrors[] = $error->getMessage();
             }
 
-            return $this->json([
+            return $this->json(
+                [
                 'status' => 'error',
                 'data' => [
                     'errors' => $dataErrors
                     ]
                 ],
-                Response::HTTP_BAD_REQUEST);
-        } 
+                Response::HTTP_BAD_REQUEST
+            );
+        }
 
         $entityManager->persist($theProductEntity);
 
@@ -160,30 +183,55 @@ class ApiProductController extends AbstractController
      */
     public function update(
         int $id,
+        SluggerInterface $slug,
         EntityManagerInterface $entityManager,
         ProductRepository $productRepository,
         Request $request
     ): Response {
-        $theProductEntity = $productRepository->find($id);
+        /* no actualiza producto */
+        $data = json_decode($request->getContent());
 
-        if (!$theProductEntity) {
-            return $this->json([
-                'message' => sprintf('No he encontrado el producto con id.: %s', $id)
-            ], Response::HTTP_NOT_FOUND);
-        }
-        $data = $request->request;
+        $theProductEntity = $productRepository->find($data->$id);
+
+        /* if ($request->files->has('img_principal')) {
+            $imgPrincipalFile= $request->files->get('img_principal');
+
+            $theProductEntity->setImgPrincipal($imgPrincipalFile);
+
+        } */
+        /* $data->$request->request->get(); */
+
+        $slugProduct = $slug->slug($data->get('name'));
 
         $theProductEntity->setName($data->get('name'));
         $theProductEntity->setCategory($data->get('category'));
-        $theProductEntity->setImgPrincipal($data->get('img_principal'));
         $theProductEntity->setWeight($data->get('weight'));
         $theProductEntity->setPrice($data->get('price'));
-        $theProductEntity->setSlug($data->get('slug'));
-
-        $entityManager->flush();
+        $theProductEntity->setSlug($slugProduct);
 
         return $this->json(null, Response::HTTP_NO_CONTENT);
     }
 
-}
+    /**
+     * @Route(
+     *      "/{id}",
+     *      name="delete",
+     *      methods={"DELETE"},
+     *      requirements={
+     *          "id": "\d+"
+     *      }
+     * )
+     */
+    public function remove(
+        int $id,
+        EntityManagerInterface $entityManager,
+        ProductRepository $productRepository
+    ): Response {
+        $theProductEntity = $productRepository->find($id);
 
+        $entityManager->remove($theProductEntity);
+        $entityManager->flush();
+
+        return $this->json(null, Response::HTTP_NO_CONTENT);
+    }
+}

@@ -30,8 +30,12 @@ class ProductNormalize
         }
 
         $productsImage = [];
+
         foreach ($product->getImageProducts() as $productImage) {
-            $productsImage[] = $this->urlHelper->getAbsoluteUrl('/media/img/product/'.$productImage->getImgFile());
+            array_push($productsImage, [
+                // 'img_file' => $productImage->getImgFile(),
+                $this->urlHelper->getAbsoluteUrl('/media/img/product/'.$productImage->getImgFile())
+            ]);
         }
 
         return [

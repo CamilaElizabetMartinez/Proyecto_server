@@ -8,6 +8,8 @@
 /var/
 /vendor/
 /migrations/
+/cache/
+
 
 .phpunit.result.cache
 /phpunit.xml
