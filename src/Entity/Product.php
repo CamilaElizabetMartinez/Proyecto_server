@@ -57,13 +57,13 @@ class Product
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=ImageProduct::class, mappedBy="product")
+     * @ORM\OneToMany(targetEntity=ImageProduct::class, mappedBy="product", cascade={"persist", "remove"})
      */
-    private $image_product;
+    private $imageProducts;
 
     public function __construct()
     {
-        $this->image_product = new ArrayCollection();
+        $this->imageProducts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -160,13 +160,13 @@ class Product
      */
     public function getImageProducts(): Collection
     {
-        return $this->image_product;
+        return $this->imageProducts;
     }
 
     public function addImageProduct(ImageProduct $imageProduct): self
     {
-        if (!$this->image_product->contains($imageProduct)) {
-            $this->image_product[] = $imageProduct;
+        if (!$this->imageProducts->contains($imageProduct)) {
+            $this->imageProducts[] = $imageProduct;
             $imageProduct->setProduct($this);
         }
 
@@ -175,8 +175,8 @@ class Product
 
     public function removeImageProduct(ImageProduct $imageProduct): self
     {
-        if ($this->image_product->removeElement($imageProduct)) {
-           
+        if ($this->imageProducts->removeElement($imageProduct)) {
+            // set the owning side to null (unless already changed)
             if ($imageProduct->getProduct() === $this) {
                 $imageProduct->setProduct(null);
             }
@@ -184,4 +184,5 @@ class Product
 
         return $this;
     }
+
 }
