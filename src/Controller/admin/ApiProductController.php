@@ -5,7 +5,6 @@ namespace App\Controller\admin;
 use App\Entity\ImageProduct;
 use App\Entity\Product;
 use App\Repository\CategoryRepository;
-use App\Repository\UserRepository;
 use App\Repository\ProductRepository;
 use App\Service\ProductNormalize;
 use Doctrine\ORM\EntityManagerInterface;
@@ -33,18 +32,14 @@ class ApiProductController extends AbstractController
         ProductRepository $productRepository,
         ProductNormalize $productNormalize
     ): Response {
-
-        /* USAR PARA EL CONTROLADOR PRODUCT DE ADMIN*/
         
         $user = $this->getUser();
 
-        if ($user->this->isGranted('ROLE_ADMIN')) {
-            return $productRepository->findBy(['user' => $user]);
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $productEntities = $productRepository->findBy(['user' => $user]);
         } else {
-            return $productRepository->findAll();
-        }
-
-        $productEntities = $productRepository->findAll();
+            $productEntities = $productRepository->findAll();
+        };
 
         $data = [];
 
@@ -68,11 +63,8 @@ class ApiProductController extends AbstractController
         ValidatorInterface $validator,
         CategoryRepository $categoryRepository,
         ProductNormalize $productNormalize,
-        UserRepository $userRepository,
         SluggerInterface $slug
     ): Response {
-        
-        /* falta subida de imagenes de producto */
         /* falta recuperar entidad de usuario segun quien este logueado */
         $data = $request->request;
     
@@ -113,11 +105,12 @@ class ApiProductController extends AbstractController
                 $theImageProductEntity->setImgFile($imgNewFilename);
 
                 $theImageProductEntity->setProduct($theProductEntity);
+                $theProductEntity->addImageProduct($theImageProductEntity);
 
-                $entityManager->persist($theImageProductEntity);
-
+               /*  $entityManager->persist($theImageProductEntity); */
             }
         }
+        
 
         if ($request->files->has('img_principal')) {
             $imgPrincipalFile= $request->files->get('img_principal');
@@ -134,10 +127,9 @@ class ApiProductController extends AbstractController
             } catch (FileException $e) {
                 throw new \Exception($e->getMessage());
             }
-
+            
             $theProductEntity->setImgPrincipal($imgNewFilename);
         }
-
         $errors = $validator->validate($theProductEntity);
         
         if (count($errors) > 0) {
@@ -161,8 +153,6 @@ class ApiProductController extends AbstractController
 
         $entityManager->persist($theProductEntity);
 
-        // $theProductentity no tiene id.
-
         $entityManager->flush();
 
         return $this->json(
@@ -170,6 +160,7 @@ class ApiProductController extends AbstractController
             Response::HTTP_CREATED
         );
     }
+
 
     /**
      * @Route(
@@ -185,14 +176,41 @@ class ApiProductController extends AbstractController
         int $id,
         SluggerInterface $slug,
         EntityManagerInterface $entityManager,
+        CategoryRepository $categoryRepository,
         ProductRepository $productRepository,
+        
         Request $request
     ): Response {
-        /* no actualiza producto */
-        $data = json_decode($request->getContent());
+        
+        $theProductEntity = $productRepository->find($id);
 
-        $theProductEntity = $productRepository->find($data->$id);
+        if(!$theProductEntity) {
+            return $this->json([
+                'message' => sprintf('No he encontrado el producto con id.: %s', $id)
+            ], Response::HTTP_NOT_FOUND);
+        }
+        
+        $data = $request->request;
+        
+        if ($request->files->has('img_principal')) {
+            $imgPrincipalFile= $request->files->get('img_principal');
 
+            $theProductEntity->setImgPrincipal($imgPrincipalFile);
+        }
+        
+        $theCategoryEntity = $categoryRepository->find($data->get('category_id'));
+        $slugProduct = $slug->slug($data->get('name'));
+        
+        $theProductEntity->setName($data->get('name'));
+        $theProductEntity->setCategory($theCategoryEntity);
+        $theProductEntity->setWeight($data->get('weight'));
+        $theProductEntity->setPrice($data->get('price'));
+        $theProductEntity->setSlug($slugProduct);
+        
+        $entityManager->flush();
+
+        return $this->json(null, Response::HTTP_NO_CONTENT);
+        
         /* if ($request->files->has('img_principal')) {
             $imgPrincipalFile= $request->files->get('img_principal');
 
@@ -201,7 +219,7 @@ class ApiProductController extends AbstractController
         } */
         /* $data->$request->request->get(); */
 
-        $slugProduct = $slug->slug($data->get('name'));
+        /* $slugProduct = $slug->slug($data->get('name'));
 
         $theProductEntity->setName($data->get('name'));
         $theProductEntity->setCategory($data->get('category'));
@@ -209,7 +227,7 @@ class ApiProductController extends AbstractController
         $theProductEntity->setPrice($data->get('price'));
         $theProductEntity->setSlug($slugProduct);
 
-        return $this->json(null, Response::HTTP_NO_CONTENT);
+        return $this->json(null, Response::HTTP_NO_CONTENT); */
     }
 
     /**
