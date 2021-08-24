@@ -23,7 +23,7 @@ class ImageProduct
     private $img_file;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="yes")
+     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="imageProducts")
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
