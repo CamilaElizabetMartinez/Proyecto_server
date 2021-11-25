@@ -18,10 +18,10 @@ class ImageNews
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=news::class)
+     * @ORM\ManyToOne(targetEntity=News::class)
      * @ORM\JoinColumn(nullable=false)
      */
-    private $news;
+    private $News;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,14 +33,14 @@ class ImageNews
         return $this->id;
     }
 
-    public function getNews(): ?news
+    public function getNews(): ?News
     {
-        return $this->news;
+        return $this->News;
     }
 
-    public function setNews(?news $news): self
+    public function setNews(?News $News): self
     {
-        $this->news = $news;
+        $this->News = $News;
 
         return $this;
     }
