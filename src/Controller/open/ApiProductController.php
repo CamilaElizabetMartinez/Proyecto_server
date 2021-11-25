@@ -19,7 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * @Route("/api/product", name="api_product_")
+ * @Route("/api/product", name="api_product")
  */
 class ApiProductController extends AbstractController
 {
