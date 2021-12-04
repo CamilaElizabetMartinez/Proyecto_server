@@ -22,7 +22,7 @@ class NewsNormalize
      *
      * @return array|null
      */
-    public function newsNormalize(News $news, ImageNews $imageNews): ?array
+    public function newsNormalize(News $newsEntity): ?array
     {
         $img_file = '';
         if ($imageNews->getImgFile()) {
