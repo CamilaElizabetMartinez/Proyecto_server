@@ -26,6 +26,13 @@ class NewsNormalize
     {   
         //Declaramos un array vacio.
         $newsImage = [];
+
+        //Por cada entidad de noticia
+        //obtengo la url absoluta de cada imagen y lo guardo en un array vacio
+        foreach($newsEntity->getImageNews() as $imageNewsEntity) {
+            array_push($newsImage, 
+                $this->urlHelper->getAbsoluteUrl('/media/img/news/'.$imageNewsEntity->getImgFile())
+            );
         }
 
         return [
