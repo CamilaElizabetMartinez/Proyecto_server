@@ -57,5 +57,8 @@ class ApiNewsController extends AbstractController
         //Recupero las noticias con sus respectivas imagenes segun el intervalo 
         $newsEntities = $newsRepository->findBy(array(),array(),$quantityNewsForPage,$fromPosition);
 
+        //Declaro un array vacio para guardar los datos normalizados
+        $data = [];
+
     }
 };
