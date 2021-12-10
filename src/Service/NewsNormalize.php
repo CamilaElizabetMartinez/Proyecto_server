@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-use App\Entity\ImageNews;
 use App\Entity\News;
 use Symfony\Component\HttpFoundation\UrlHelper;
 
