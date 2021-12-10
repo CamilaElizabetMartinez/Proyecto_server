@@ -25,6 +25,19 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ApiNewsController extends AbstractController
 {
+    /**
+     * @Route(
+     *      "",
+     *      name="get",
+     *      methods={"GET"}
+     * )
+     */
+    public function index(
+        Request $request,
+        NewsRepository $newsRepository,
+        NewsNormalize $newsNormalize
+    ): Response {
    
 
+    }
 };
