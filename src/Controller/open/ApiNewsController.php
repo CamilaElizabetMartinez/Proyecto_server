@@ -39,7 +39,9 @@ class ApiNewsController extends AbstractController
     ): Response {
         //Guardo el numero de la pagina
         $pageNumber = $request->query->get('pageNumber');
-   
 
+        //Declaro el numero de noticias por pagina
+        $quantityNewsForPage = 8;
+        
     }
 };
