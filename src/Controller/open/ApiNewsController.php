@@ -37,6 +37,8 @@ class ApiNewsController extends AbstractController
         NewsRepository $newsRepository,
         NewsNormalize $newsNormalize
     ): Response {
+        //Guardo el numero de la pagina
+        $pageNumber = $request->query->get('pageNumber');
    
 
     }
