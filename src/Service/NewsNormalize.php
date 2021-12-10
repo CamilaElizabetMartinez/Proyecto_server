@@ -34,14 +34,15 @@ class NewsNormalize
                 $this->urlHelper->getAbsoluteUrl('/media/img/news/'.$imageNewsEntity->getImgFile())
             );
         }
-
+        
+        //Retorna los datos en formato JSON
         return [
-            'id' => $news->getId(),
-            'title' => $news->getTitle(),
-            'slug' => $news->getslug(),
-            'subtitile' => $news->getSubtitle(),
-            'description' => $news->getDescription(),
-            'img_file' => $img_file,
+            'id' => $newsEntity->getId(),
+            'title' => $newsEntity->getTitle(),
+            'slug' => $newsEntity->getslug(),
+            'subtitle' => $newsEntity->getSubtitle(),
+            'description' => $newsEntity->getDescription(),
+            'images' => $newsImage,
         ];
     }
 
