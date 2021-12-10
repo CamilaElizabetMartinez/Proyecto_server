@@ -2,21 +2,11 @@
 
 namespace App\Controller\open;
 
-use App\Entity\News;
 use App\Repository\NewsRepository;
 use App\Service\NewsNormalize;
-use App\Entity\User;
-use App\Repository\UserRepository;
-use App\Service\UserNormalize;
-use App\Controller\ValidatorInterface;
-use App\Controller\UserPasswordHasherInterface;
-use App\Entity\ImageNews;
-use App\Repository\ImageNewsRepository;
-use Doctrine\ORM\EntityManagerInterface;
-use Lcobucci\JWT\Validation\Validator;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -48,14 +38,14 @@ class ApiNewsController extends AbstractController
         ->getQuery()->getSingleScalarResult();
 
         //Si pageNumber es verdadero devuelve el numero de la primer posición
-        if ($pageNumber == true){
+        if ($pageNumber == true) {
             $fromPosition = ($pageNumber -1) * $quantityNewsForPage;
-        }else{
+        } else {
             $fromPosition = 0;
         }
 
-        //Recupero las noticias con sus respectivas imagenes segun el intervalo 
-        $newsEntities = $newsRepository->findBy(array(),array(),$quantityNewsForPage,$fromPosition);
+        //Recupero las noticias con sus respectivas imagenes segun el intervalo
+        $newsEntities = $newsRepository->findBy(array(), array(), $quantityNewsForPage, $fromPosition);
 
         //Declaro un array vacio para guardar los datos normalizados
         $data = [];
