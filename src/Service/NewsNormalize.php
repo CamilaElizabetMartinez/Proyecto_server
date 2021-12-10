@@ -23,10 +23,9 @@ class NewsNormalize
      * @return array|null
      */
     public function newsNormalize(News $newsEntity): ?array
-    {
-        $img_file = '';
-        if ($imageNews->getImgFile()) {
-            $img_file = $this->urlHelper->getAbsoluteUrl('/media/img/news/'.$imageNews->getImgFile());
+    {   
+        //Declaramos un array vacio.
+        $newsImage = [];
         }
 
         return [
