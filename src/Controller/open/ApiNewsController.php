@@ -67,5 +67,13 @@ class ApiNewsController extends AbstractController
         //Declaro el numero total de paginas
         $totalPages = ceil($quantityTheNews/$quantityNewsForPage);
         
+        //Declaro los valores y lo retorno en objecto
+        $response = [
+            'pageNumber' => $pageNumber,
+            'newsEntities' => $data,
+            'totalPage' => $totalPages
+        ];
+
+        return $this->json($response);
     }
 };
