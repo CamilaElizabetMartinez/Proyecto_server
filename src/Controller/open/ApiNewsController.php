@@ -47,5 +47,12 @@ class ApiNewsController extends AbstractController
         $quantityTheNews = $newsRepository->createQueryBuilder('tableNews')->select('count(tableNews.id)')
         ->getQuery()->getSingleScalarResult();
 
+        //Si pageNumber es verdadero devuelve el numero de la primer posición
+        if ($pageNumber == true){
+            $fromPosition = ($pageNumber -1) * $quantityNewsForPage;
+        }else{
+            $fromPosition = 0;
+        }
+
     }
 };
