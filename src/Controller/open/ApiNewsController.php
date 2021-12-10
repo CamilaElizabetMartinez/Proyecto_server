@@ -64,5 +64,8 @@ class ApiNewsController extends AbstractController
         foreach ($newsEntities as $theNewsEntity) {
             $data[] = $newsNormalize->newsNormalize($theNewsEntity);
         }
+        //Declaro el numero total de paginas
+        $totalPages = ceil($quantityTheNews/$quantityNewsForPage);
+        
     }
 };
