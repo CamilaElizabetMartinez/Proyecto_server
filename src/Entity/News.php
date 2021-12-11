@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\NewsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,21 @@ class News
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img_principal;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ImageNews::class, mappedBy="news")
+     */
+    private $imageNews;
+
+    public function __construct()
+    {
+        $this->imageNews = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +103,48 @@ class News
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getImgPrincipal(): ?string
+    {
+        return $this->img_principal;
+    }
+
+    public function setImgPrincipal(?string $img_principal): self
+    {
+        $this->img_principal = $img_principal;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ImageNews[]
+     */
+    public function getImageNews(): Collection
+    {
+        return $this->imageNews;
+    }
+
+    public function addImageNews(ImageNews $imageNews): self
+    {
+        if (!$this->imageNews->contains($imageNews)) {
+            $this->imageNews[] = $imageNews;
+            $imageNews->setNews($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImageNews(ImageNews $imageNews): self
+    {
+        if ($this->imageNews->removeElement($imageNews)) {
+            // set the owning side to null (unless already changed)
+            if ($imageNews->getNews() === $this) {
+                $imageNews->setNews(null);
+            }
+        }
 
         return $this;
     }
