@@ -28,6 +28,11 @@ class ImageNews
      */
     private $img_file;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=News::class, inversedBy="imageNews")
+     */
+    private $news;
+
     public function getId(): ?int
     {
         return $this->id;
