@@ -106,8 +106,6 @@ class ApiProductController extends AbstractController
 
                 $theImageProductEntity->setProduct($theProductEntity);
                 $theProductEntity->addImageProduct($theImageProductEntity);
-
-               /*  $entityManager->persist($theImageProductEntity); */
             }
         }
         
@@ -161,7 +159,6 @@ class ApiProductController extends AbstractController
         );
     }
 
-
     /**
      * @Route(
      *      "/{id}",
@@ -210,24 +207,6 @@ class ApiProductController extends AbstractController
         $entityManager->flush();
 
         return $this->json(null, Response::HTTP_NO_CONTENT);
-        
-        /* if ($request->files->has('img_principal')) {
-            $imgPrincipalFile= $request->files->get('img_principal');
-
-            $theProductEntity->setImgPrincipal($imgPrincipalFile);
-
-        } */
-        /* $data->$request->request->get(); */
-
-        /* $slugProduct = $slug->slug($data->get('name'));
-
-        $theProductEntity->setName($data->get('name'));
-        $theProductEntity->setCategory($data->get('category'));
-        $theProductEntity->setWeight($data->get('weight'));
-        $theProductEntity->setPrice($data->get('price'));
-        $theProductEntity->setSlug($slugProduct);
-
-        return $this->json(null, Response::HTTP_NO_CONTENT); */
     }
 
     /**
