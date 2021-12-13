@@ -49,6 +49,11 @@ class News
      */
     private $imageNews;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $creation_timestamp;
+
     public function __construct()
     {
         $this->imageNews = new ArrayCollection();
@@ -145,6 +150,18 @@ class News
                 $imageNews->setNews(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCreationTimestamp(): ?\DateTimeInterface
+    {
+        return $this->creation_timestamp;
+    }
+
+    public function setCreationTimestamp(?\DateTimeInterface $creation_timestamp): self
+    {
+        $this->creation_timestamp = $creation_timestamp;
 
         return $this;
     }
