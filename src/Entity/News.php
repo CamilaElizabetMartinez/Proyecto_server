@@ -45,7 +45,7 @@ class News
     private $img_principal;
 
     /**
-     * @ORM\OneToMany(targetEntity=ImageNews::class, mappedBy="news")
+     * @ORM\OneToMany(targetEntity=ImageNews::class, mappedBy="news", cascade={"persist", "remove"})
      */
     private $imageNews;
 
