@@ -23,6 +23,10 @@ class ApiNewsController extends AbstractController
         NewsRepository $newsRepository,
         NewsNormalize $newsNormalize
     ): Response {
+        
+        //Recupero todas las noticias
+        $newsEntities = $newsRepository->findAll();
+
     }
 
 }
