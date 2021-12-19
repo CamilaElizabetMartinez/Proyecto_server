@@ -132,6 +132,17 @@ class ApiNewsController extends AbstractController
         //Seteo el slug
         $newsEntity->setSlug($slugNews);
 
+        //Se ejecuta la sentencia
+        $entityManager->flush();
+
+        //Se normaliza la entidad noticia y se guarda en una variable
+        $newsNormalized= $newsNormalize->NewsNormalize($newsEntity);
+        
+        //Retorno en formato JSON la noticia normalizada
+        return $this->json(
+            $newsNormalized,
+            Response::HTTP_OK
+        );
     }
     }
     }
