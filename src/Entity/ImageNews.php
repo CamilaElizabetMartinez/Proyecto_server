@@ -17,11 +17,6 @@ class ImageNews
      */
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=News::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $News;
 
     /**
      * @ORM\Column(type="string", length=255)
