@@ -2,10 +2,12 @@
 
 namespace App\Controller\superAdmin;
 
+use App\Entity\News;
 use App\Repository\NewsRepository;
 use App\Service\NewsNormalize;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/api/super_admin/news", name="api_news_super_admin")
@@ -143,6 +145,24 @@ class ApiNewsController extends AbstractController
             $newsNormalized,
             Response::HTTP_OK
         );
+    }
+
+    /**
+    * @Route(
+    *      "/{id}",
+    *      name="delete",
+    *      methods={"DELETE"},
+    *      requirements={
+    *          "id": "\d+"
+    *      }
+    * )
+    * @IsGranted("ROLE_SUPER_ADMIN")
+    */
+    public function remove(
+        int $id,
+        EntityManagerInterface $entityManager,
+        NewsRepository $newsRepository
+    ): Response {
     }
     }
     }
