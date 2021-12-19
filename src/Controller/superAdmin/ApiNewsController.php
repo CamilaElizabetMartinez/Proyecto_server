@@ -58,6 +58,13 @@ class ApiNewsController extends AbstractController
         SluggerInterface $slug,
         EntityManagerInterface $entityManager
     ): Response {
+
+        //Guardo los datos que llegan de la solicitud
+        $data = $request->request;
+
+        //Recupero el slug
+        $slugNews = $slug->slug($data->get('title'));
+
     }
     }
     }
