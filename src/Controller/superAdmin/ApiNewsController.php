@@ -103,7 +103,16 @@ class ApiNewsController extends AbstractController
         NewsNormalize $newsNormalize,
         Request $request
     ): Response {
-    }
+
+        //Recupero la noticia por ID
+        $newsEntity = $newsRepository->find($id);
+
+        //Si el ID es distinto a la noticia retorna un mensaje
+        if (!$newsEntity) {
+            return $this->json([
+                'message' => sprintf('No he encontrado la noticia con id.: %s', $id)
+            ], Response::HTTP_NOT_FOUND);
+        }
     }
     }
     }
