@@ -76,6 +76,13 @@ class ApiNewsController extends AbstractController
         //seteo la descripción
         $newsEntity->setDescription($data->get('description'));
 
+        //Se prepara y ejecuta la sentencia
+        $entityManager->persist($newsEntity);
+        $entityManager->flush();
+
+        //Retorno la nueva entidad de noticia normalizada
+        return $this->json($newsEntity, Response::HTTP_CREATED);
+    }
     }
     }
     }
