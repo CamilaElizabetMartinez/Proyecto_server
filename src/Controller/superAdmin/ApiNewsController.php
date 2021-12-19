@@ -27,6 +27,9 @@ class ApiNewsController extends AbstractController
         //Recupero todas las noticias
         $newsEntities = $newsRepository->findAll();
 
+        //Declaro un array vacio
+        $newsNormalized = [];
+
     }
 
 }
