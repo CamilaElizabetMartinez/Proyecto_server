@@ -83,6 +83,27 @@ class ApiNewsController extends AbstractController
         //Retorno la nueva entidad de noticia normalizada
         return $this->json($newsEntity, Response::HTTP_CREATED);
     }
+
+    /**
+    * @Route(
+    *      "/{id}",
+    *      name="put",
+    *      methods={"PUT"},
+    *      requirements={
+    *          "id": "\d+"
+    *      }
+    * )
+    * @IsGranted("ROLE_SUPER_ADMIN")
+    */
+    public function Update(
+        int $id,
+        SluggerInterface $slug,
+        EntityManagerInterface $entityManager,
+        NewsRepository $newsRepository,
+        NewsNormalize $newsNormalize,
+        Request $request
+    ): Response {
+    }
     }
     }
     }
