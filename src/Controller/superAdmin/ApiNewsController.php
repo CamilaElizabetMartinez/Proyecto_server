@@ -113,6 +113,12 @@ class ApiNewsController extends AbstractController
                 'message' => sprintf('No he encontrado la noticia con id.: %s', $id)
             ], Response::HTTP_NOT_FOUND);
         }
+        
+        //Guardo los datos que llegan de la solicitud
+        $data = $request->request;
+        
+        //Obtengo el slug
+        $slugNews = $slug->slug($data->get('title'));
     }
     }
     }
