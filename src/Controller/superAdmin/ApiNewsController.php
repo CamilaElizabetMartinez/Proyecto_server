@@ -163,6 +163,16 @@ class ApiNewsController extends AbstractController
         EntityManagerInterface $entityManager,
         NewsRepository $newsRepository
     ): Response {
+        //Recupero la noticia por ID
+        $newsEntity = $newsRepository->find($id);
+
+        //Se prepara y ejecuta la sentencia
+        $entityManager->remove($newsEntity);
+        $entityManager->flush();
+
+        return $this->json(
+            Response::HTTP_NO_CONTENT
+        );
     }
     }
     }
