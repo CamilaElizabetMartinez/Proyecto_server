@@ -30,6 +30,17 @@ class ApiNewsController extends AbstractController
         //Declaro un array vacio
         $newsNormalized = [];
 
+        //Se normaliza cada entidad de noticias y se guarda en un array vacio
+        foreach ($newsEntities as $theNewsEntity) {
+            $newsNormalized[] = $newsNormalize->newsNormalize($theNewsEntity);
+        }
+
+        //Retorno en formato JSON las categorias normalizadas
+        return $this->json(
+            $newsNormalized,
+            Response::HTTP_OK
+        );
+    }
     }
 
 }
