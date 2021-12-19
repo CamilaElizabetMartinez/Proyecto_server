@@ -119,6 +119,19 @@ class ApiNewsController extends AbstractController
         
         //Obtengo el slug
         $slugNews = $slug->slug($data->get('title'));
+        
+        //Seteo titulo
+        $newsEntity->setTitle($data->get('title'));
+
+        //Seteo subtitulo
+        $newsEntity->setSubtitle($data->get('subtitle'));
+
+        //Seteo la descripción
+        $newsEntity->setDescription($data->get('description'));
+
+        //Seteo el slug
+        $newsEntity->setSlug($slugNews);
+
     }
     }
     }
