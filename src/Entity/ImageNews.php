@@ -35,12 +35,12 @@ class ImageNews
 
     public function getNews(): ?News
     {
-        return $this->News;
+        return $this->news;
     }
 
-    public function setNews(?News $News): self
+    public function setNews(?News $news): self
     {
-        $this->News = $News;
+        $this->news = $news;
 
         return $this;
     }
