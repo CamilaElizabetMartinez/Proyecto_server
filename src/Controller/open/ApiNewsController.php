@@ -4,7 +4,6 @@ namespace App\Controller\open;
 
 use App\Repository\NewsRepository;
 use App\Service\NewsNormalize;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +31,7 @@ class ApiNewsController extends AbstractController
 
         //Declaro el numero de noticias por pagina
         $quantityNewsForPage = 8;
-        
+
         //Consulto cuántas filas hay en la tabla News
         $quantityTheNews = $newsRepository->createQueryBuilder('tableNews')->select('count(tableNews.id)')
         ->getQuery()->getSingleScalarResult();
@@ -56,7 +55,7 @@ class ApiNewsController extends AbstractController
         }
         //Declaro el numero total de paginas
         $totalPages = ceil($quantityTheNews/$quantityNewsForPage);
-        
+
         //Declaro los valores y lo retorno en objecto
         $response = [
             'pageNumber' => $pageNumber,
@@ -65,5 +64,28 @@ class ApiNewsController extends AbstractController
         ];
 
         return $this->json($response);
+    }
+
+    /**
+    * @Route(
+    *      "/detail/{slug}",
+    *      name="get",
+    *      methods={"GET"}
+    * )
+    */
+    public function detail(
+        NewsRepository $newsRepository,
+        NewsNormalize $newsNormalize,
+        string $slug
+    ): Response {
+
+        //Se recupera una noticia por Slug
+        $theNewsEntity = $newsRepository->findOneBy(['slug' => $slug]);
+
+        //Se normaliza la noticia recuperada
+        $theNewstEntityNormalize = $newsNormalize->NewsNormalize($theNewsEntity);
+
+        //Se retorna en formato JSON
+        return $this->json($theNewstEntityNormalize,Response::HTTP_OK);
     }
 };
