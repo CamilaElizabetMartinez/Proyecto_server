@@ -39,6 +39,7 @@ class NewsNormalize
             'id' => $newsEntity->getId(),
             'title' => $newsEntity->getTitle(),
             'slug' => $newsEntity->getslug(),
+            'creation_timestamp' => $newsEntity->getCreationTimestamp(),
             'subtitle' => $newsEntity->getSubtitle(),
             'description' => $newsEntity->getDescription(),
             'images' => $newsImage,
