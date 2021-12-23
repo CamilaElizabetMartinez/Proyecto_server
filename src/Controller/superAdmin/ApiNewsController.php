@@ -77,6 +77,8 @@ class ApiNewsController extends AbstractController
         $newsEntity = new News();
         //Seteo el titulo
         $newsEntity->setTitle($data->get('title'));
+        //Seteo la fecha
+        $newsEntity->setCreationTimestamp(new \DateTime());
         //Seteo el slug
         $newsEntity->setSlug($slugNews);
         //Seteo el subtitulo
