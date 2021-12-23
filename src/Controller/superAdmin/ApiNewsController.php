@@ -69,9 +69,9 @@ class ApiNewsController extends AbstractController
 
         //Guardo los datos que llegan de la solicitud
         $data = $request->request;
-
-        //Recupero el slug
-        $slugNews = $slug->slug($data->get('title'));
+        
+        //Recupero el slug y se le concatena un unico ID
+        $slugNews = $slug->slug($data->get('title')).'-'.uniqid();
 
         //Creo una nueva entidad de noticia
         $newsEntity = new News();
