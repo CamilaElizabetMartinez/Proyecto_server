@@ -273,7 +273,8 @@ class ApiNewsController extends AbstractController
                 //Setea la noticia
                 $theImageNewsEntity->setNews($newsEntity);
             
-                //Se envia a la BBDD
+                //Se prepara y ejecuta la sentencia
+                $entityManager->persist($theImageNewsEntity);
                 $entityManager->flush();
             }//End foreach
 
