@@ -204,7 +204,9 @@ class ApiNewsController extends AbstractController
         //Lo obtiene y guarda en una variable
         if ($request->files->has('img_principal')) {
             $imageFile = $request->files->get('img_principal');
-
+            //Recupera el nombre original de la imagen
+            $imgNewsOriginalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+            
             //Se genera un unico ID,recupera la extencion,la concatena
             //Y guarda en una variable
             $newFilename = uniqid().'.'.$imageFile->guessExtension();
