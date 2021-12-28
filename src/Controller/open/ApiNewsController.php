@@ -17,7 +17,7 @@ class ApiNewsController extends AbstractController
     /**
      * @Route(
      *      "",
-     *      name="get",
+     *      name="cget",
      *      methods={"GET"}
      * )
      */
