@@ -22,7 +22,15 @@ class NewsNormalize
      * @return array|null
      */
     public function newsNormalize(News $newsEntity): ?array
-    {   
+    {   //Declaramos una variable con strin vacio
+        $imgPrincipal = '';
+
+        //Si la noticia obtiene imgPrincipal se obtiene la url absoluta
+        //Y se guarda en la variable vacia
+        if ($newsEntity->getImgPrincipal()) {
+            $imgPrincipal = $this->urlHelper->getAbsoluteUrl('/media/img/news/'.$newsEntity->getImgPrincipal());
+        }
+
         //Declaramos un array vacio.
         $newsImage = [];
 
@@ -42,6 +50,7 @@ class NewsNormalize
             'creation_timestamp' => $newsEntity->getCreationTimestamp(),
             'subtitle' => $newsEntity->getSubtitle(),
             'description' => $newsEntity->getDescription(),
+            'img_principal'=> $imgPrincipal,
             'images' => $newsImage,
         ];
     }
