@@ -210,7 +210,7 @@ class ApiNewsController extends AbstractController
             
             //Se genera un unico ID,recupera la extencion,la concatena
             //Y guarda en una variable
-            $newFilename = uniqid().'.'.$imageFile->guessExtension();
+            $newFilename =  $imgOriginalFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
 
             //Intenta mover el archivo y necesita 2 parametros
             try {
