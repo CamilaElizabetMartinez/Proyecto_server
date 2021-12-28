@@ -254,7 +254,7 @@ class ApiNewsController extends AbstractController
                 try {
                     $theImageNews->move(
                         //1º La ruta donde se va a mover
-                        $request->server->get('DOCUMENT_ROOT') . DIRECTORY_SEPARATOR . 'media/img/product',
+                        $request->server->get('DOCUMENT_ROOT') . DIRECTORY_SEPARATOR . 'media/img/news',
                         //2º El nuevo nombre del archivo
                         $imgNewFilename
                     );
