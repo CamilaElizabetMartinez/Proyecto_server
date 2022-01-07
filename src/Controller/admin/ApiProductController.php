@@ -65,22 +65,20 @@ class ApiProductController extends AbstractController
         ProductNormalize $productNormalize,
         SluggerInterface $slug
     ): Response {
-        /* falta recuperar entidad de usuario segun quien este logueado */
-        $data = $request->request;
     
+        $data = json_decode($request->getContent(), true); 
 
         $theUserEntity = $this->getUser();
-        $theCategoryEntity = $categoryRepository->find($data->get('category_id'));
-        $slugProduct = $slug->slug($data->get('name'));
+        $theCategoryEntity = $categoryRepository->find($data['category_id']);
+        $slugProduct = $slug->slug($data['name']);
 
         $theProductEntity = new Product();
 
-        $theProductEntity->setName($data->get('name'));
+        $theProductEntity->setName($data['name']);
         $theProductEntity->setCategory($theCategoryEntity);
         $theProductEntity->setSlug($slugProduct);
-        $theProductEntity->setWeight($data->get('weight'));
-        $theProductEntity->setPrice($data->get('price'));
-
+        $theProductEntity->setWeight($data['weight']);
+        $theProductEntity->setPrice($data['price']);
         $theProductEntity->setUser($theUserEntity);
 
         if ($request->files->has('image_product')) {
@@ -110,7 +108,7 @@ class ApiProductController extends AbstractController
         }
         
 
-        if ($request->files->has('img_principal')) {
+        if ($request->files->has('img_principal')&& $request->files->get('img_principal')) {
             $imgPrincipalFile= $request->files->get('img_principal');
 
             $imgOriginalFilename = pathinfo($imgPrincipalFile->getClientOriginalName(), PATHINFO_FILENAME);
