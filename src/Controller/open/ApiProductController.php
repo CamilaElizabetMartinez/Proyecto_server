@@ -35,8 +35,8 @@ class ApiProductController extends AbstractController
         ProductRepository $productRepository,
         ProductNormalize $productNormalize
     ): Response {
-        if ($request->query->has('termino')) {
-            $productEntities = $productRepository->findByTerm($request->query->get('termino'));
+        //Guardo los datos que llegan de la solicitud
+        $data = $request->request;
 
             $data = [];
 
