@@ -93,6 +93,7 @@ class ApiProductController extends AbstractController
             ->getResult()
         ;
                 
+        //Declaro un array vacio para guardar los datos normalizados
         $data = [];
 
         foreach ($productEntities as $theProductEntity) {
