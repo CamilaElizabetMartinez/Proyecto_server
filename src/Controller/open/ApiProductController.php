@@ -101,7 +101,9 @@ class ApiProductController extends AbstractController
             $data[] = $productNormalize->ProductNormalize($theProductEntity);
         }
 
-        return $this->json($data);
+        //Declaro el numero total de paginas
+        $totalPages = ceil($quantityTheProduct/$quantityProductForPage);
+
     }
 
     /**
