@@ -44,8 +44,10 @@ class ApiProductController extends AbstractController
         
         //Guardo el numero de la pagina
         $pageNumber = $request->query->get('pageNumber');
-    
-            return $this->json($data);
+        
+        //Declaro el numero de producto por pagina
+        $quantityProductForPage = 8;
+
         }
 
         $productEntities = $productRepository->findAll();
