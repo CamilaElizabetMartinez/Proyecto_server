@@ -42,9 +42,8 @@ class ApiProductController extends AbstractController
         $filterName =$request->query->get('filterName');
         $filterCategory =$request->query->get('filterCategory');
         
-            foreach ($productEntities as $theProductEntity) {
-                $data[] = $productNormalize->productNormalize($theProductEntity);
-            }
+        //Guardo el numero de la pagina
+        $pageNumber = $request->query->get('pageNumber');
     
             return $this->json($data);
         }
