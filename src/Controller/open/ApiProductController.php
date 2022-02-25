@@ -96,8 +96,9 @@ class ApiProductController extends AbstractController
         //Declaro un array vacio para guardar los datos normalizados
         $data = [];
 
+        //Se normaliza cada entidad de producto y se guarda en un array vacio
         foreach ($productEntities as $theProductEntity) {
-            $data[] = $productNormalize->productNormalize($theProductEntity);
+            $data[] = $productNormalize->ProductNormalize($theProductEntity);
         }
 
         return $this->json($data);
