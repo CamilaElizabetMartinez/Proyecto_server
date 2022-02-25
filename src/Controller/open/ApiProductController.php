@@ -10,7 +10,10 @@ use App\Repository\UserRepository;
 use App\Service\UserNormalize;
 use App\Controller\ValidatorInterface;
 use App\Controller\UserPasswordHasherInterface;
+use App\Entity\Category;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Error;
 use Lcobucci\JWT\Validation\Validator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -104,6 +107,16 @@ class ApiProductController extends AbstractController
         //Declaro el numero total de paginas
         $totalPages = ceil($quantityTheProduct/$quantityProductForPage);
 
+        //Declaro los valores y lo retorno
+        $response = [
+            'pageNumber' => $pageNumber,
+            'productEntities' => $data,
+            'filterName' => $filterName,
+            'filterCategory' => $filterCategory,
+            'totalPage' => $totalPages
+        ];
+     
+        return $this->json($response, Response::HTTP_OK);
     }
 
     /**
