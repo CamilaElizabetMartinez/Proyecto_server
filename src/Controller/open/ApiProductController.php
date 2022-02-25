@@ -38,8 +38,10 @@ class ApiProductController extends AbstractController
         //Guardo los datos que llegan de la solicitud
         $data = $request->request;
 
-            $data = [];
-
+        //Recupero los valores del parametro por GET
+        $filterName =$request->query->get('filterName');
+        $filterCategory =$request->query->get('filterCategory');
+        
             foreach ($productEntities as $theProductEntity) {
                 $data[] = $productNormalize->productNormalize($theProductEntity);
             }
