@@ -48,10 +48,23 @@ class ApiProductController extends AbstractController
         //Declaro el numero de producto por pagina
         $quantityProductForPage = 8;
 
+        //Consulto cuántas filas hay en la tabla Producto por filtrado
+        $qb = $productRepository
+            ->createQueryBuilder('tableProduct')
+            ->select('count(tableProduct.id)')
+        ;
+        $quantityTheProduct = [];
+
+        if ($filterName) {
+            $quantityTheProduct= $qb->where('tableProduct.name like :filterName')
+            ->setParameter('filterName', "%$filterName%");
+        }
+        if ($filterCategory) {
+            $quantityTheProduct= $qb->andWhere('tableProduct.category = :filterCategory')
+            ->setParameter('filterCategory', $filterCategory);
         }
 
-        $productEntities = $productRepository->findAll();
-
+        $quantityTheProduct = $qb->getQuery()->getSingleScalarResult();
         $data = [];
 
         foreach ($productEntities as $theProductEntity) {
