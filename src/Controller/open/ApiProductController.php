@@ -65,6 +65,14 @@ class ApiProductController extends AbstractController
         }
 
         $quantityTheProduct = $qb->getQuery()->getSingleScalarResult();
+
+        //Si pageNumber es verdadero devuelve el numero de la primer posición
+        if ($pageNumber == true) {
+            $fromPosition = ($pageNumber -1) * $quantityProductForPage;
+        } else {
+            $fromPosition = 0;
+        }
+    
         $data = [];
 
         foreach ($productEntities as $theProductEntity) {
