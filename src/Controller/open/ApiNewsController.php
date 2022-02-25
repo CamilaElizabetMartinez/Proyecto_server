@@ -33,7 +33,8 @@ class ApiNewsController extends AbstractController
         $quantityNewsForPage = 8;
 
         //Consulto cuántas filas hay en la tabla News
-        $quantityTheNews = $newsRepository->createQueryBuilder('tableNews')->select('count(tableNews.id)')
+        $quantityTheNews = $newsRepository->createQueryBuilder('tableNews')
+        ->select('count(tableNews.id)')
         ->getQuery()->getSingleScalarResult();
 
         //Si pageNumber es verdadero devuelve el numero de la primer posición
