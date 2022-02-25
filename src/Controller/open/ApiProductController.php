@@ -73,6 +73,26 @@ class ApiProductController extends AbstractController
             $fromPosition = 0;
         }
     
+        //Recupero los productos por nombre,categoria y posicion segun el intervalo.
+        $qb = $productRepository->createQueryBuilder('tableProduct');
+
+        $productEntities = [];
+
+        if ($filterName) {
+            $productEntities= $qb->where('tableProduct.name like :filterName')
+            ->setParameter('filterName', "%$filterName%");
+        }
+        if ($filterCategory) {
+            $productEntities= $qb->andWhere('tableProduct.category = :filterCategory')
+            ->setParameter('filterCategory', $filterCategory);
+        }
+
+        $productEntities = $qb->setFirstResult($fromPosition)
+            ->setMaxResults($quantityProductForPage)
+            ->getQuery()
+            ->getResult()
+        ;
+                
         $data = [];
 
         foreach ($productEntities as $theProductEntity) {
