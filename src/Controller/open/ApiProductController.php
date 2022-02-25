@@ -121,7 +121,7 @@ class ApiProductController extends AbstractController
 
     /**
      * @Route(
-     *      "/{slug}",
+     *      "/detail/{slug}",
      *      name="get",
      *      methods={"GET"}
      * )
@@ -130,8 +130,7 @@ class ApiProductController extends AbstractController
         string $slug,
         productRepository $productRepository,
         ProductNormalize $productNormalize
-    ): Response
-    {
+    ): Response {
         $theProductEntity = $productRepository->findOneBy(['slug' => $slug]);
         
         $theProductEntityNormalize = $productNormalize->ProductNormalize($theProductEntity);
