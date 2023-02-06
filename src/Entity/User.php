@@ -100,6 +100,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $tokenExpiration;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -341,6 +346,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTokenExpiration(?\DateTimeInterface $tokenExpiration): self
     {
         $this->tokenExpiration = $tokenExpiration;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }
